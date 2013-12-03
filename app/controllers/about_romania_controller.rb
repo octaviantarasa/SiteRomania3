@@ -1,5 +1,6 @@
 class AboutRomaniaController < ApplicationController
-	def about_romania
+	def about_page
+		
 		
 	end
 end

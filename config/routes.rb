@@ -5,7 +5,14 @@ Site::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
    root to: 'home#home_page'
-  # Example of regular route:
+
+   get 'about_romania', to: 'about_romania#about_page'
+   get 'destinations', to: 'destinations#destinations_page'
+   get 'multimedia', to: 'multimedia#multimedia_page'
+   get 'special_interest', to: 'special_interest#special_interest_page'
+   get 'trip_planner', to: 'trip_planner#trip_planner_page'
+   get 'what_to_do', to: 'what_to_do#what_to_do_page'
+        # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
 

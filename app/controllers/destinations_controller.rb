@@ -1,5 +1,4 @@
 class DestinationsController < ApplicationController
-	def destinations
-		
+	def destinations_page		
 	end
 end
