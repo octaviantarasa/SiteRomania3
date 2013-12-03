@@ -1,0 +1,2 @@
+class WhatToDoController < ApplicationController
+end

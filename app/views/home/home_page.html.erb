@@ -1,0 +1,62 @@
+		<div class = "container">
+
+			<section class="content row">
+<!--				<div class="col-lg-12">-->
+					<header class="clearfix">
+						<section id="branding">
+							<a href="index.html"><img src="assets/romania-branding.png" alt="Logo for Romania" style="max-width:100%"></a>
+						</section>
+						<%= render "components/header" %>
+					</header> <!--clearfix-->
+
+
+<!--				</div><!--column-->
+	
+					<%= render "components/carousel" %>
+				<div class="main col col-lg-7">
+							<h2>Welcome to Romania Tourism!</h2>
+							<p>This website is intended to assist travelers who are planning to visit Romania or would like
+to learn more about Romania.
+
+Authentic, Natural and Cultural are the words that best capture the essence of Romania,
+a dynamic country rich in history, arts and scenic beauty.
+
+Romania offers countless unique travel experiences that are waiting to be discovered.
+
+A journey of a few hours by car or train can take you from the Danube River to a beautiful, intact, medieval town in Transylvania; from Bucharest - Romania's capital city - to the
+Black Sea; from Southern Transylvania to Bucovina or Maramures. Take a step back in time
+as you visit one of the world's famous painted monasteries in Bucovina, the ancient, hilltop citadel in Sighisoara or an authentic, centuries-old, folkloric village in Maramures.</p>
+
+
+				</div><!--main col col-lg-8-->
+				<div class="sidebar col col-lg-5">
+					<%= render "components/upcoming_events"  %>
+
+					<aside class="photos">
+						<h2>Photos</h2>
+						<div class="modalphotos photogrid clearfix">
+							<img src="assets/Ateneul_Roman_tn.jpg" alt="Ateneul Roman" title="ateneul roman"/>
+							<img src="assets/Brown_Bear_tn.jpg" alt="Brown Bear"/>
+							<img src="assets/Mountain_City_tn.jpg" alt="Mountain City"/>
+							<img src="assets/Constanta_Casino_tn.jpg" alt="Constanta Casino"/>
+							<img src="assets/Corvin_Castle_tn.jpg" alt="Corvin Castle"/>
+							<img src="assets/Sheep_Fagarasi_Mountain_tn.jpg" alt="Sheep Fagarasi Mountain"/>
+
+						</div>
+					</aside> <!--photos-->
+
+
+				</div><!--sidebar col col-lg-5-->
+			</section><!--content row-->
+
+
+			<%= render "components/footer"  %>
+
+		</div><!--container-->
+
+		<section id="modal" class="modal fade" >
+			<div class="modal-body">
+				<img id="modalimage" src="" alt="Modal Photo" >
+			</div><!--modal-body-->
+		</section><!--modal fade-->
+

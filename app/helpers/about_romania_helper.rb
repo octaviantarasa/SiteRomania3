@@ -1,0 +1,2 @@
+module AboutRomaniaHelper
+end

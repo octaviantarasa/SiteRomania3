@@ -1,0 +1,2 @@
+class SpecialInterestController < ApplicationController
+end
