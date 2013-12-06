@@ -13,8 +13,9 @@ Site::Application.routes.draw do
    get 'trip_planner', to: 'trip_planner#trip_planner_page'
    get 'what_to_do', to: 'what_to_do#what_to_do_page'
 
+    match '/destinations/hello' => 'destinations#hello', :as => 'hello', :via => :get
 
-   match '/destinations/hello', to: 'destinations#hello', via: :get, as: 'hello'
+   # get 'hello', to: 'destinations#hello'
         # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
