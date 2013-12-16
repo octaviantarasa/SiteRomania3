@@ -47,7 +47,7 @@
 
 																	<a href="<%= destinations_path %>" class = "dropdown-toggle" >Destinations</a>
 																	<ul class = "dropdown-menu">
-																		<li><a href= "#">Top Destinations</a></li>
+																		<li><%= link_to 'Top Destinations',  hello_path, :remote => true %></li>
 																		<li><a href= "#">Cities & Towns</a></li>
 																		<li><a href= "#">Regions</a></li>
 																		<li><a href= "#">Castles & Fortresses</a></li>
@@ -70,9 +70,12 @@
 
 																	<a href="<%= special_interest_path %>" class = "dropdown-toggle" >Special Interest</a>
 																	<ul class = "dropdown-menu">
-																		<li><a href= "#">Images</a></li>
-																		<li><a href= "#">Videos</a></li>
-																		<li><a href= "#">Download Images</a></li>
+																		<li><a href= "#">Tradition & Folklore</a></li>
+																		<li><a href= "#">Festivals & Events</a></li>
+																		<li><a href= "#">Food & Wine</a></li>
+																		<li><a href= "#">Architecture</a></li>
+																		<li><a href= "#">Count Dracula Legend</a></li>
+																		<li><a href= "#">Shopping</a></li>
 																	</ul>
 
 															</li>
@@ -89,6 +92,23 @@
 																		<li><a href= "#">Entry Requirements</a></li>
 
 																	</ul>
+
+															</li>
+
+															<li class = "dropdown">
+
+																  <% if current_user %>
+																  	<a  class = "dropdown-toggle" >Signed in as <strong><%= current_user.name %></strong>!</a>
+																 		<ul class = "dropdown-menu">
+																			<li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+																    </ul>
+																    
+																  <% else %>
+																    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+																  <% end %>
+
+																
+
 
 															</li>
 

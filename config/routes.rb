@@ -4,16 +4,22 @@ Site::Application.routes.draw do
     # get 'about', to: 'layouts#application'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-   root to: 'home#home_page'
+    get 'auth/:provider/callback', to: 'sessions#create'
+    get 'auth/failure', to: redirect('/')
+    get 'signout', to: 'sessions#destroy', as: 'signout'
 
-   get 'about_romania', to: 'about_romania#about_page'
-   get 'destinations', to: 'destinations#destinations_page'
-   get 'multimedia', to: 'multimedia#multimedia_page'
-   get 'special_interest', to: 'special_interest#special_interest_page'
-   get 'trip_planner', to: 'trip_planner#trip_planner_page'
-   get 'what_to_do', to: 'what_to_do#what_to_do_page'
+    root to: 'home#home_page'
+
+    get 'about_romania', to: 'about_romania#about_page'
+    get 'destinations', to: 'destinations#destinations_page'
+    get 'multimedia', to: 'multimedia#multimedia_page'
+    get 'special_interest', to: 'special_interest#special_interest_page'
+    get 'trip_planner', to: 'trip_planner#trip_planner_page'
+    get 'what_to_do', to: 'what_to_do#what_to_do_page'
 
     match '/destinations/hello' => 'destinations#hello', :as => 'hello', :via => :get
+    match '/destinations' => 'destinations#topdestination', :as => 'topdestination', :via => :get
+
 
    # get 'hello', to: 'destinations#hello'
         # Example of regular route:

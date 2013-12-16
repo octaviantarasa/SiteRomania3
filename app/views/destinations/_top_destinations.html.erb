@@ -1,1 +1,39 @@
-<p>cucu bau</p>
+
+		<h2> Top Destinations</h2>
+
+		<div style='width: 984px;'>
+		  <div id="map" style='width: 984px; height: 400px;'></div>
+		</div>
+		
+		<section class="topdestinations">
+			<div class="destinationindex" class="row">
+				<section class="scrollspy clearfix col col-lg-3 hidden-sm">
+					<ul class="nav nav-list affix">
+						<li><a href="#Sucevita">Manastirea Sucevita</a></li>
+					</ul><!-- nav-list -->
+				</section><!-- scrollspy --> 
+			</div><!-- destinationindex -->
+		</section><!-- topdestinations -->
+
+
+		<script type='text/javascript'>
+			handler = Gmaps.build('Google');
+			handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+			 markers = handler.addMarkers(<%=raw @hash.to_json %>);;
+			  handler.bounds.extendWith(markers);
+			  handler.fitMapToBounds();
+			});
+		</script>
+
+		<% content_for :scripts do %>
+			<script type="text/javascript" charset="utf-8">
+
+				Gmaps4Rails.callback = function() {
+			 		google.maps.event.addListener(Gmaps4Rails.map.serviceObject, "click", function() {
+			    	alert("You clicked the map.");
+			  	});
+				};
+
+			</script>
+		<% end %>
+		<%= yield :scripts  %>
