@@ -47,15 +47,15 @@
 
 																	<a href="<%= destinations_path %>" class = "dropdown-toggle" >Destinations</a>
 																	<ul class = "dropdown-menu">
-																		<li><%= link_to 'Top Destinations',  hello_path, :remote => true %></li>
-																		<li><a href= "#">Cities & Towns</a></li>
-																		<li><a href= "#">Regions</a></li>
-																		<li><a href= "#">Castles & Fortresses</a></li>
+																		<li><%= link_to 'Top Destinations',  top_path, :remote => true %></li>
+																		<li><%= link_to 'Cities & Towns',  cities_path, :remote => true %></li>
+																		<li>	<%= link_to 'Regions',  regions_path, :remote => true %></li>
+																		<li>	<%= link_to 'Castles & Fortresses',  castles_path, :remote => true%></li>
 																	</ul>
 
 															</li>
 
-															<li class = "dropdown">
+														<!-- 	<li class = "dropdown">
 
 																	<a href="<%= multimedia_path %>" class = "dropdown-toggle" >Multimedia</a>
 																	<ul class = "dropdown-menu">
@@ -64,18 +64,18 @@
 																		<li><a href= "#">Download Images</a></li>
 																	</ul>
 
-															</li>
+															</li> -->
 
 															<li class = "dropdown">
 
 																	<a href="<%= special_interest_path %>" class = "dropdown-toggle" >Special Interest</a>
 																	<ul class = "dropdown-menu">
-																		<li><a href= "#">Tradition & Folklore</a></li>
-																		<li><a href= "#">Festivals & Events</a></li>
-																		<li><a href= "#">Food & Wine</a></li>
-																		<li><a href= "#">Architecture</a></li>
-																		<li><a href= "#">Count Dracula Legend</a></li>
-																		<li><a href= "#">Shopping</a></li>
+																		<li><%= link_to 'Tradition & Folklore', traditions_folklore_path, :remote => true %></li>
+																		<li><%= link_to 'Festivals & Events', festivals_events_path, :remote => true %></li>
+																		<li><%= link_to 'Food & Wine', food_wine_path, :remote => true %></li>
+																		<li><%= link_to 'Architecture', architecture_path, :remote => true %></li>
+																		<li><%= link_to 'Count Dracula Legend', count_dracula_path, :remote => true %></li>
+																		<li><%= link_to 'Shopping', shopping_path, :remote => true %></li>
 																	</ul>
 
 															</li>
@@ -84,12 +84,12 @@
 
 																	<a href="<%= trip_planner_path %>" class = "dropdown-toggle" >Trip Planner</a>
 																	<ul class = "dropdown-menu">
-																		<li><a href= "#">Getting here and around</a></li>
-																		<li><a href= "#">Transportation</a></li>
-																		<li><a href= "#">Itinerary Ideas</a></li>
-																		<li><a href= "#">Practical Information</a></li>
-																		<li><a href= "#">Distinctive Accommodations</a></li>
-																		<li><a href= "#">Entry Requirements</a></li>
+																		<li><%= link_to 'Getting here and around', getting_here_path, :remote => true %></li>
+																		<li><%= link_to 'Transportation', transportation_path, :remote => true %></li>
+																		<li><%= link_to 'Itinerary Ideas', itinerary_ideas_path, :remote => true %></li>
+																		<li><%= link_to 'Practical Information', practical_information_path, :remote => true %></li>
+																		<li><%= link_to 'Distinctive Accommodations', accommodations_path, :remote => true %></li>
+																		<li><%= link_to 'Entry Requirements', entry_requirements_path, :remote => true %></li>
 
 																	</ul>
 

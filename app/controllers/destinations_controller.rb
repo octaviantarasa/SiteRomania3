@@ -4,7 +4,7 @@ class DestinationsController < ApplicationController
 
 	end
 
-	def hello
+	def top
 
 		@topdestination = TopDestination.all
 		@hash = Gmaps4rails.build_markers(@topdestination) do |top, marker|
@@ -24,6 +24,26 @@ class DestinationsController < ApplicationController
 	   # render '/destinations/_top_destinations', :handler => :erb, :layout => false
   end	
 
+  # def cities
+
+  # 	respond_to do |format|
+
+  #     format.js 
+
+
+  #   end
+  	
+  # end
+
+  # def castles
+  # 	respond_to do |format|
+
+  #     format.js 
+
+
+  #   end
+  # end
+  
   def topdestination
 
 

@@ -17,10 +17,25 @@ Site::Application.routes.draw do
     get 'trip_planner', to: 'trip_planner#trip_planner_page'
     get 'what_to_do', to: 'what_to_do#what_to_do_page'
 
-    match '/destinations/hello' => 'destinations#hello', :as => 'hello', :via => :get
+    match '/destinations/top' => 'destinations#top', :as => 'top', :via => :get
+    match '/destinations/cities' => 'destinations#cities', :as => 'cities', :via => :get
+    match '/destinations/castles' => 'destinations#castles', :as => 'castles', :via => :get
+    match '/destinations/regions' => 'destinations#regions', :as => 'regions', :via => :get
     match '/destinations' => 'destinations#topdestination', :as => 'topdestination', :via => :get
 
+    match '/special_interest/architecture' => 'special_interest#architecture', :as => 'architecture', :via => :get
+    match '/special_interest/count_dracula' => 'special_interest#count_dracula', :as => 'count_dracula', :via => :get
+    match '/special_interest/festivals_events' => 'special_interest#festivals_events', :as => 'festivals_events', :via => :get
+    match '/special_interest/food_wine' => 'special_interest#food_wine', :as => 'food_wine', :via => :get
+    match '/special_interest/shopping' => 'special_interest#shopping', :as => 'shopping', :via => :get
+    match '/special_interest/traditions_folklore' => 'special_interest#traditions_folklore', :as => 'traditions_folklore', :via => :get
 
+    match '/trip_planner/accommodations' => 'trip_planner#accommodations', :as => 'accommodations', :via => :get
+    match '/trip_planner/entry_requirements' => 'trip_planner#entry_requirements', :as => 'entry_requirements', :via => :get
+    match '/trip_planner/getting_here' => 'trip_planner#getting_here', :as => 'getting_here', :via => :get
+    match '/trip_planner/itinerary_ideas' => 'trip_planner#itinerary_ideas', :as => 'itinerary_ideas', :via => :get
+    match '/trip_planner/practical_information' => 'trip_planner#practical_information', :as => 'practical_information', :via => :get
+    match '/trip_planner/transportation' => 'trip_planner#transportation', :as => 'transportation', :via => :get
    # get 'hello', to: 'destinations#hello'
         # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

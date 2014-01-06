@@ -71,7 +71,7 @@ h2 {
 .main_container {
   background: beige;
   border-radius: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 10px;s
 }
 .my_content {
   margin-bottom: 10px;
@@ -82,4 +82,8 @@ h2 {
 .center_img{
 	margin: 0 auto;
 	display: block;
+}
+#mapp{
+
+  margin-left: 240px;
 }
