@@ -1,8 +1,8 @@
 
 		<h2> Top Destinations</h2>
-
 		
-		 <div id="mapp" style='width: 500px; height: 400px;'></div>
+		
+		
 	
 		
 		<section class="topdestinations">
@@ -19,13 +19,17 @@
 					</ul><!-- nav-list -->
 				</section><!-- scrollspy -->
 				<section class="destinationinfo col col-lg-9">
+					 <button id="ascunde_harta">Ascunde harta</button>
+						<button id="arata_harta" style="display:none">Arata harta</button>
+					 	<div id="mapp" style='width: 500px; height: 400px;'></div>
+					  
 					<%= render "snippet_destination_monastery"  %>
 					<%= render "snippet_destination_delta"  %>
 					<%= render "snippet_destination_sea"  %>
 					<%= render "snippet_destination_parliament"  %>
 					<%= render "snippet_destination_bran"  %>
 					<%= render "snippet_destination_peles"  %>
-					<%= render "snippet_destination_parliament"  %>
+
 				</section><!-- destinationinfo -->
 			</div><!-- destinationindex -->
 
@@ -40,21 +44,20 @@
 		
 		<script src="assets/myscrypt.js" type="text/javascript"></script>
 		<script type='text/javascript'>
-			handler = Gmaps.build('Google');
-			handler.buildMap({ provider: {}, internal: {id: 'mapp'}}, function(){
-			 markers = handler.addMarkers(<%=raw @hash.to_json %>);;
+			 	handler = Gmaps.build('Google');
+				handler.buildMap({ provider: {}, internal: {id: 'mapp'}}, function(){
+				markers = handler.addMarkers(<%=raw @hash.to_json %>);;
 			  handler.bounds.extendWith(markers);
 			  handler.fitMapToBounds();
 			});
+
 		</script>
 
 		<% content_for :scripts do %>
 			<script type="text/javascript" charset="utf-8">
 
 				Gmaps4Rails.callback = function() {
-			 		google.maps.event.addListener(Gmaps4Rails.map.serviceObject, "click", function() {
-			    	alert("You clicked the map.");
-			  	});
+				alert("abc");
 				};
 
 			</script>
