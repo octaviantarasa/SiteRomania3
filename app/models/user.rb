@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+  belongs_to :rate_location
+  belongs_to :rate_event
+  belongs_to :comment
 end
