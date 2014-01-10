@@ -23,9 +23,9 @@
 						<button id="arata_harta" style="display:none">Arata harta</button>
 					 	<!-- <div id="mapp" style='width: 500px; height: 400px;'></div> -->
 					 		<script type="text/javascript">
-				alert("1");
+				// alert("1");
     		function initialize() {
-    			alert("2");
+    			// alert("2");
         var mapOptions = {
           zoom: 8,
           center: new google.maps.LatLng(-34.397, 150.644)
@@ -39,22 +39,22 @@
       map: map,
       title: 'Hello World!'
   });
-      alert("3");
+      // alert("3");
       }
 
       function loadScript() {
-      	alert("4");
+      	// alert("4");
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
             'callback=initialize';
-            alert("5");
+            // alert("5");
         document.body.appendChild(script);
-        alert("6");
+        // alert("6");
       }
-      alert("7");
+      // alert("7");
       window.onload = loadScript;
-      alert("8");
+      // alert("8");
     </script>
      <% if current_user %>
  	<h2>hello</h2>

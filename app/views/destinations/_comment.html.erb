@@ -1,8 +1,8 @@
-
+<div><p>aaaaaa</p><%=  @location  %></div>
 				
 				<%= form_for(@comment) do |f| %>
 				 	<%= f.hidden_field :user_id, :value => current_user.id  %>
-				 	<%= f.hidden_field :location_id, :value => @location  %>
+				 	<%= f.hidden_field :location_id, :value => @delta_loc  %>
 				  <div class="field">
 				    <%= f.label :com_text %><br>
 				    <%= f.text_field :com_text %>

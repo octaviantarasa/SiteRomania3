@@ -13,7 +13,8 @@
 		</section>
 		
 	
-			<%= @test  %>
+			
+				
 				<% @delta.each do |d1,d2| %>
 					
 						<% if d1 != "note" %>
@@ -35,9 +36,8 @@
 						<% end %>
 				<% end %>
 			<% if current_user %>
-			<% @location = TopDestination.where(:title => "Delta Dunarii") %>
-			<% @location = @location[0].id %>
-			<%= link_to "Comment", comment_path, :remote => true %>
+		
+			<%= link_to "Comment", comments_path, :remote => true %>
 			<% end %>
 		
 	</div><!-- media-body -->

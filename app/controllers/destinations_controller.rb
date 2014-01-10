@@ -15,12 +15,12 @@ class DestinationsController < ApplicationController
 		 	@a = marker.json({ :id => top.id, :link => "topdestination"})
     end
 
-  
+    @tmp = 0
     @sea = information_com("Marea Neagra", TopDestination)
     @delta = {}
     
     @delta = information_com("Delta Dunarii", TopDestination)
-
+    @delta_loc = @tmp
     @sucevita = 
 
     @parliament = information_com("Casa Poporului", TopDestination)
@@ -60,6 +60,15 @@ class DestinationsController < ApplicationController
 
   end
 
+  def create
+    @comment = Comment.new(comment_params)
+
+    
+      if @comment.save
+       redirect_to destinations_path
+      end
+   
+  end
   
   def topdestination
   end
@@ -92,8 +101,13 @@ class DestinationsController < ApplicationController
         end
         h["note"] = sum/nr
       end
-    h
+      @tmp = top.id
+    h 
+
     end
 
+     def comment_params
+      params.require(:comment).permit(:com_text, :user_id, :location_id)
+    end
 
 end
