@@ -16,8 +16,9 @@ Site::Application.routes.draw do
     get 'special_interest', to: 'special_interest#special_interest_page'
     get 'trip_planner', to: 'trip_planner#trip_planner_page'
     get 'what_to_do', to: 'what_to_do#what_to_do_page'
-
+# my_route GET    /my_route/:first_param/:second_param/:third_param(.:format)
     match '/destinations/top' => 'destinations#top', :as => 'top', :via => :get
+    match '/destinations/comment' => 'destinations#comment', :as => 'comment', :via => :get
     match '/destinations/cities' => 'destinations#cities', :as => 'cities', :via => :get
     match '/destinations/castles' => 'destinations#castles', :as => 'castles', :via => :get
     match '/destinations/regions' => 'destinations#regions', :as => 'regions', :via => :get

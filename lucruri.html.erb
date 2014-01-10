@@ -1,0 +1,49 @@
+ <% if @pony.errors.any? %>
+				    <div id="error_explanation">
+				      <h2><%= pluralize(@pony.errors.count, "error") %> prohibited this pony from being saved:</h2>
+
+				      <ul>
+				      <% @pony.errors.full_messages.each do |msg| %>
+				        <li><%= msg %></li>
+				      <% end %>
+				      </ul>
+				    </div>
+				  <% end %>
+
+
+
+
+				  	<% if current_user %>
+				
+				<%= form_for(@table) do |f| %>
+				 	<%= f.hidden_field :user_id, current_user.id  %>
+				  <div class="field">
+				    <%= f.label :com_text %><br>
+				    <%= f.text_field :com_text %>
+				  </div>
+				  
+				  <div class="actions">
+				    <%= f.submit %>
+				  </div>
+				<% end %>
+			<% end %>
+
+
+
+
+
+
+
+
+			<%= form_for(@comment) do |f| %>
+				 	<%= f.hidden_field :user_id, current_user.id  %>
+				 	<%= f.hidden_field :location_id, @location  %>
+				  <div class="field">
+				    <%= f.label :com_text %><br>
+				    <%= f.text_field :com_text %>
+				  </div>
+				  
+				  <div class="actions">
+				    <%= f.submit %>
+				  </div>
+				<% end %>

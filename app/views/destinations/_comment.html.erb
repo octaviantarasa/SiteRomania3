@@ -1,0 +1,14 @@
+
+				
+				<%= form_for(@comment) do |f| %>
+				 	<%= f.hidden_field :user_id, :value => current_user.id  %>
+				 	<%= f.hidden_field :location_id, :value => @location  %>
+				  <div class="field">
+				    <%= f.label :com_text %><br>
+				    <%= f.text_field :com_text %>
+				  </div>
+				  
+				  <div class="actions">
+				    <%= f.submit %>
+				  </div>
+				<% end %>

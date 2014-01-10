@@ -17,6 +17,8 @@ class DestinationsController < ApplicationController
 
   
     @sea = information_com("Marea Neagra", TopDestination)
+    @delta = {}
+    
     @delta = information_com("Delta Dunarii", TopDestination)
 
     @sucevita = 
@@ -48,6 +50,15 @@ class DestinationsController < ApplicationController
 
   end	
 
+  def comment
+    @comment = Comment.new
+
+    respond_to do |format|
+      format.js 
+      format.html
+    end
+
+  end
 
   
   def topdestination
@@ -61,11 +72,14 @@ class DestinationsController < ApplicationController
       com = Comment.where(:location_id => top.id)
       rate = RateLocation.where(:location_id => top.id)
       h = Hash.new
+     
       h.compare_by_identity
       com.each do |t|
         
-        h["name"] = User.find_by_id(t.user_id).name
-        h["comm"] = t.com_text
+        # h["name"] = User.find_by_id(t.user_id).name
+        # h["comm"] = t.com_text
+        name =User.find_by_id(t.user_id).name
+        h[name] = t.com_text
         
       end
       if rate.empty?
@@ -78,7 +92,7 @@ class DestinationsController < ApplicationController
         end
         h["note"] = sum/nr
       end
-      h
+    h
     end
 
 
