@@ -4,6 +4,8 @@ class DestinationsController < ApplicationController
 
 	end
 
+
+
 	def top
 
 		@topdestination = TopDestination.all
@@ -11,42 +13,73 @@ class DestinationsController < ApplicationController
 		  marker.lat top.latitude
 		  marker.lng top.longitude
 		 	@a = marker.json({ :id => top.id, :link => "topdestination"})
-
-		end
-		respond_to do |format|
-
-      format.js 
-
-
     end
 
-	   # render '/destinations/_top_destinations'
-	   # render '/destinations/_top_destinations', :handler => :erb, :layout => false
+  
+    @sea = information_com("Marea Neagra", TopDestination)
+    @delta = information_com("Delta Dunarii", TopDestination)
+
+    @sucevita = 
+
+    @parliament = information_com("Casa Poporului", TopDestination)
+    @bran = information_com("Castelul Bran", Castle)
+    @peles = information_com("Castelul Peles", Castle)
+
+    # @corvinesti = information("", Castle)
+
+    @balta = information_com("Cetatea de Balta", Castle)
+    @fagaras = information_com("Cetatea Fagaras", Castle)
+    @prejmer = information_com("Cetatea Prejmer", Castle)
+    @rasnov = information_com("Cetatea Rasnov", Castle)
+    @viilor = information_com("Cetatea Valea Viilor", Castle)
+    @viscri = information_com("Cetatea Viscri", Castle)
+    @brasov = information_com("Brasov", City)
+    @bucuresti = information_com("Bucuresti", City)
+    @cluj = information_com("Cluj", City)
+    @constanta = information_com("Constanta", City)
+    @iasi = information_com("Iasi", City)
+    @timisoara = information_com("Timisoara", City)
+   
+
+		
+		respond_to do |format|
+      format.js 
+    end
+
   end	
 
-  # def cities
 
-  # 	respond_to do |format|
-
-  #     format.js 
-
-
-  #   end
-  	
-  # end
-
-  # def castles
-  # 	respond_to do |format|
-
-  #     format.js 
-
-
-  #   end
-  # end
   
   def topdestination
-
-
-
   end
+
+  private 
+
+    def information_com(name, table)
+      topdest = table.all
+      top = topdest.find_by_title(name)
+      com = Comment.where(:location_id => top.id)
+      rate = RateLocation.where(:location_id => top.id)
+      h = Hash.new
+      h.compare_by_identity
+      com.each do |t|
+        
+        h["name"] = User.find_by_id(t.user_id).name
+        h["comm"] = t.com_text
+        
+      end
+      if rate.empty?
+        h["note"] = 0
+      else
+        nr = rate.size
+        sum = 0
+        rate.each do |t|
+          sum += t.note
+        end
+        h["note"] = sum/nr
+      end
+      h
+    end
+
+
 end

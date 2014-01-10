@@ -19,31 +19,71 @@
 		top.save
 		top = TopDestination.new(latitude: 47.517175, longitude: 25.864272, title: "Manastirea Voronet", address: "str. Voronet, nr 166, Gura Humorului, 725300, jud Suceava", description: "", location_id: 7)
 		top.save
+
 		castle = Castle.new(latitude: 45.515094, longitude: 25.367076, title: "Castelul Bran", address: "Str. Moșoiu Traian, general 495- 498, Bran 507025 ", description: "", location_id: 8)
 		castle.save
 		castle = Castle.new(latitude: 45.359913, longitude: 25.542729, title: "Castelul Peles", address: "str. Pelesului, nr. 2, 106100, Sinaia, jud. Prahova", description: "", location_id: 9)
 		castle.save
-		castle = Castle.new(latitude: , longitude: , title: "Cetatea de Balta", address: "", description: "", location_id: 10)
+		castle = Castle.new(latitude: 33 , longitude: 33, title: "Cetatea de Balta", address: "", description: "", location_id: 10)
 		castle.save
-		castle = Castle.new(latitude: , longitude: , title: "Cetatea Fagaras", address: "", description: "", location_id: 11)
+		castle = Castle.new(latitude: 33, longitude: 33, title: "Cetatea Fagaras", address: "", description: "", location_id: 11)
 		castle.save
-		castle = Castle.new(latitude: , longitude: , title: "Cetatea Prejmer", address: "", description: "", location_id: 12)
+		castle = Castle.new(latitude: 33, longitude: 33, title: "Cetatea Prejmer", address: "", description: "", location_id: 12)
 		castle.save
-		castle = Castle.new(latitude: , longitude: , title: "Cetatea Rasnov", address: "", description: "", location_id: 13)
+		castle = Castle.new(latitude: 33, longitude: 33, title: "Cetatea Rasnov", address: "", description: "", location_id: 13)
 		castle.save
-		castle = Castle.new(latitude: , longitude: , title: "Cetatea Valea Viilor", address: "", description: "", location_id: 14)
+		castle = Castle.new(latitude: 33, longitude: 33, title: "Cetatea Valea Viilor", address: "", description: "", location_id: 14)
 		castle.save
-		castle = Castle.new(latitude: , longitude: , title: "Cetatea Viscri", address: "", description: "", location_id: 15)
+		castle = Castle.new(latitude: 33, longitude: 33, title: "Cetatea Viscri", address: "", description: "", location_id: 15)
 		castle.save
-		city = City.new(latitude: , longitude: , title: "Brasov", address: "", description: "", location_id: 16)
+
+		city = City.new(latitude: 33, longitude: 33, title: "Brasov", address: "", description: "", location_id: 16)
 		city.save
-		city = City.new(latitude: , longitude: , title: "Bucuresti", address: "", description: "", location_id: 17)
+		city = City.new(latitude: 33, longitude: 33, title: "Bucuresti", address: "", description: "", location_id: 17)
 		city.save
-		city = City.new(latitude: , longitude: , title: "Cluj", address: "", description: "", location_id: 18)
+		city = City.new(latitude: 33, longitude: 33, title: "Cluj", address: "", description: "", location_id: 18)
 		city.save
-		city = City.new(latitude: , longitude: , title: "Constanta", address: "", description: "", location_id: 19)
+		city = City.new(latitude: 33, longitude: 33, title: "Constanta", address: "", description: "", location_id: 19)
 		city.save
-		city = City.new(latitude: , longitude: , title: "Iasi", address: "", description: "", location_id: 20)
+		city = City.new(latitude: 33, longitude: 33, title: "Iasi", address: "", description: "", location_id: 20)
 		city.save
-		city = City.new(latitude: , longitude: , title: "Timisoara", address: "", description: "", location_id: 21)
+		city = City.new(latitude: 33, longitude: 33, title: "Timisoara", address: "", description: "", location_id: 21)
 		city.save	
+
+		event = Event.new(name: "Craciun", description: "frumos", date: ("2014-12-25").to_date)
+		event.save
+		event = Event.new(name: "Pastele", description: "frumos2", date: ("2014-4-20").to_date)
+		event.save
+
+		rate = RateEvent.new(user_id: 1, event_id: 1, note: 4)
+		rate.save
+		rate = RateEvent.new(user_id: 1, event_id: 2, note: 2)
+		rate.save
+
+		rate = RateLocation.new(user_id: 1, location_id: 1, note: 3)
+		rate.save
+		rate = RateLocation.new(user_id: 1, location_id: 3, note: 5)
+		rate.save
+		rate = RateLocation.new(user_id: 1, location_id: 7, note: 4)
+		rate.save
+		rate = RateLocation.new(user_id: 1, location_id: 10, note: 2)
+		rate.save
+		rate = RateLocation.new(user_id: 1, location_id: 17, note: 5)
+		rate.save
+
+		comment = Comment.new(com_text: "very good", location_id: 1, user_id: 1)
+		comment.save
+		comment = Comment.new(com_text: "very good", location_id: 1, user_id: 1)
+		comment.save
+		comment = Comment.new(com_text: "very good2", location_id: 3, user_id: 1)
+		comment.save
+		comment = Comment.new(com_text: "very good3", location_id: 2, user_id: 1)
+		comment.save
+		comment = Comment.new(com_text: "very good3", location_id: 2, user_id: 1)
+		comment.save
+		comment = Comment.new(com_text: "very good4", location_id: 7, user_id: 1)
+		comment.save
+		comment = Comment.new(com_text: "very good5", location_id: 10, user_id: 1)
+		comment.save
+		comment = Comment.new(com_text: "very good6", location_id: 16, user_id: 1)
+		comment.save

@@ -56,6 +56,15 @@
       window.onload = loadScript;
       alert("8");
     </script>
+     <% if current_user %>
+ 	<h2>hello</h2>
+ 	<% else %>
+ 		<p>nothing</p>
+ <% end %>
+ 		
+ 		<%= @sea  %>
+ 		<br />
+ 		<%= @b  %>
 					  <div id="map-canvas" style="height:100%"></div>
 
 					<%= render "snippet_destination_monastery"  %>

@@ -10,6 +10,16 @@
 			<img src="assets/Top Destination/Delta Dunarii/Delta_Dunarii_2_tn.jpg" alt="">
 			<img src="assets/Top Destination/Delta Dunarii/Delta_Dunarii_3_tn.jpg" alt="">
 		</section>
-
+		
+	
+			
+				<% @delta.each do |d| %>
+					
+						<br />
+						<%= d[1] %>
+						
+				<% end %>
+				<%= @delta["note"]  %>
+		
 	</div><!-- media-body -->
 </article>
