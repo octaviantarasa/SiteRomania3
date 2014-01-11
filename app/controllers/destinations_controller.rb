@@ -18,9 +18,9 @@ class DestinationsController < ApplicationController
     @tmp = 0
     @nr = 0
     # @sea = information_com("Marea Neagra", TopDestination)
-    @delta = []
+    
    
-    @delta = information_com("Delta Dunarii", TopDestination)
+    @location = information_com("Delta Dunarii", TopDestination)
 
     $delta_loc = @tmp
     # @sucevita = 
@@ -71,10 +71,25 @@ class DestinationsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     verify = @comment.save
-    aa = comment_params["location_id"]
-    name = TopDestination.find_by_id(aa).title
+    
 
-    @delta = information_com name, TopDestination
+    name = TopDestination.find_by_id(comment_params["location_id"]).title
+
+    @location = information_com name, TopDestination
+
+      case comment_params["location_id"]
+        when !((temp_location = TopDestination.find_by_id(comment_params["location_id"])).nil?)
+            @location = information_com temp_location.title, TopDestination
+        when !((temp_location = Castle.find_by_id(comment_params["location_id"])).nil?)
+            @location = information_com temp_location.title, Castle
+        when !((temp_location = City.find_by_id(comment_params["location_id"])).nil?)
+            @location = information_com temp_location.title, City
+        else
+            puts "adult"
+      end
+
+
+
     respond_to do |format|
       if verify
 
