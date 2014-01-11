@@ -1,0 +1,97 @@
+
+		<h2> Top Destinations</h2>
+		
+		<%=raw @hash.to_json %>
+		
+	
+		<%= yield :scripts  %>
+		<section class="topdestinations">
+			<div id="destinationindex" class="row">
+				<section class="scrollspy clearfix col col-lg-3 hidden-sm">
+					<% @test =222222 %>
+					<ul class="nav nav-list affix">
+						<li><a href="#Painted_Monastery">Painted Monastery</a></li>
+						<li><a href="#Danube_Delta">Danube Delta</a></li>
+						<li><a href="#Black_Sea">Black Sea</a></li>
+						<li><a href="#Bran_Castle">Bran Castle</a></li>
+						<li><a href="#Peles_Castle">Peles Castle</a></li>
+						<li><a href="#Palace_of_the_Parliament">Palace of the Parliament</a></li>
+					</ul><!-- nav-list -->
+				</section><!-- scrollspy -->
+				<section class="destinationinfo col col-lg-9">
+					 <button id="ascunde_harta">Ascunde harta</button>
+						<button id="arata_harta" style="display:none">Arata harta</button>
+					 	<!-- <div id="mapp" style='width: 500px; height: 400px;'></div> -->
+					 		<script type="text/javascript">
+				// alert("1");
+    		function initialize() {
+    			// alert("2");
+        var mapOptions = {
+          zoom: 8,
+          center: new google.maps.LatLng(-34.397, 150.644)
+        };
+        var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Hello World!'
+  });
+      // alert("3");
+      }
+
+      function loadScript() {
+      	// alert("4");
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+            'callback=initialize';
+            // alert("5");
+        document.body.appendChild(script);
+        // alert("6");
+      }
+      // alert("7");
+      window.onload = loadScript;
+      // alert("8");
+    </script>
+     <% if current_user %>
+ 	<h2>hello</h2>
+ 	<% else %>
+ 		<p>nothing</p>
+ <% end %>
+ 		
+ 		<%= @sea  %>
+ 		<br />
+ 		<%= @b  %>
+					  <div id="map-canvas" style="height:100%"></div>
+
+					<%= render "snippet_destination_monastery"  %>
+					<%= render "snippet_destination_delta"  %>
+					<%= render "snippet_destination_sea"  %>
+					<%= render "snippet_destination_parliament"  %>
+					<%= render "snippet_destination_bran"  %>
+					<%= render "snippet_destination_peles"  %>
+
+				</section><!-- destinationinfo -->
+			</div><!-- destinationindex -->
+
+			<section id="modal" class="modal fade" >
+				<div class="modal-body">
+					<img id="modalimage" src="" alt="Modal Photo" >
+					<p> abcddfsafdasbjvadbljerwav ewa efwakl aerwaewl vaeraew!!! </p>
+				</div><!--modal-body-->
+			</section><!--modal fade-->
+
+		</section><!-- topdestinations -->
+		
+		<script src="assets/myscrypt.js" type="text/javascript"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw40QW0iq4z6xH3XzQ-bGoIyU7PIIIFoc&sensor=true">
+    </script>
+
+
+
+	
+	

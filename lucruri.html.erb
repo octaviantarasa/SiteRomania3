@@ -47,3 +47,29 @@
 				    <%= f.submit %>
 				  </div>
 				<% end %>
+
+
+
+
+
+
+					<% @delta.each_slice(2) do |d| %>
+					
+		<% if d[0] != "note" %>
+			<div class="name_comm">
+				<p class="name_comm_p">
+					Name: <%= d[0] %>
+				</p>
+			</div>
+			
+
+			<div class="text_comm">
+				<p class="text_comm_p">
+					Comment: <%= d[1] %>
+				</p>
+			</div>
+		<% else %>
+			<br />
+			Note: <%= d[1]  %>
+		<% end %>
+	<% end %>

@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-	has_many :top_destions
+	has_many :top_destinations
 	has_many :cities
 	has_many :castles
 	has_many :regions

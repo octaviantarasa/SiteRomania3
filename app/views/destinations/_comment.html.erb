@@ -1,14 +1,21 @@
-<div><p>aaaaaa</p><%=  @location  %></div>
-				
-				<%= form_for(@comment) do |f| %>
-				 	<%= f.hidden_field :user_id, :value => current_user.id  %>
-				 	<%= f.hidden_field :location_id, :value => @delta_loc  %>
-				  <div class="field">
-				    <%= f.label :com_text %><br>
-				    <%= f.text_field :com_text %>
-				  </div>
-				  
-				  <div class="actions">
-				    <%= f.submit %>
-				  </div>
-				<% end %>
+	<% @delta.each_slice(2) do |d| %>
+					
+		<% if d[0] != "note" %>
+			<div class="name_comm">
+				<p class="name_comm_p">
+					Name: <%= d[0] %>
+				</p>
+			</div>
+			
+
+			<div class="text_comm">
+				<p class="text_comm_p">
+					Comment: <%= d[1] %>
+				</p>
+			</div>
+		<% else %>
+			<br />
+			Note: <%= d[1]  %>
+		<% end %>
+	<% end %>
+			
