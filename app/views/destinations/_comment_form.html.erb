@@ -1,8 +1,8 @@
 
-				
+
 				<%= form_for @comment,  :remote => true do |f| %>
 				 	<%= f.hidden_field :user_id, :value => current_user.id  %>
-				 	<%= f.hidden_field :location_id, :value => $delta_loc  %>
+				 	<%= f.hidden_field :location_id, :value => @loc  %>
 				  <div class="field">
 				    <%= f.label :com_text %><br>
 				    <%= f.text_field :com_text %>
