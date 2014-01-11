@@ -1,2 +1,2 @@
-<% @loc = $loc  %>
-$('.<%= $clas %>').append("<%=j render 'comment_form' %>");
+<% @loc = params[:loc]  %>
+$('.<%= params[:clas] %>').append("<%=j render 'comment_form' %>");

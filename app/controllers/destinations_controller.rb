@@ -58,7 +58,7 @@ class DestinationsController < ApplicationController
 
   def comment
     @comment = Comment.new
-    a = params[:clas]
+    $er = params[:clas]
     respond_to do |format|
       format.js 
     

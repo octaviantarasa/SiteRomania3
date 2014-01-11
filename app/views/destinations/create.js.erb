@@ -1,4 +1,4 @@
-$('.<%= $clas %>').empty()
+$('.<%= params[:clas] %>').empty()
 
 	<% @loc_hash=$location %>		
-$('.<%= $clas %>').append("<%= j render 'comment' %>");
+$('.<%= params[:clas] %>').append("<%= j render 'comment' %>");
