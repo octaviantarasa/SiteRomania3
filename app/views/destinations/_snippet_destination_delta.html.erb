@@ -1,4 +1,4 @@
-<article id="Danube_Delta" class="media place_show">
+<article id="Danube_Delta" class="media">
 	<h2>Danube Delta</h2>
 	<img src="" alt="">
 	<div class="media-body">
@@ -12,20 +12,20 @@
 			<img src="assets/Top Destination/Delta Dunarii/Delta_Dunarii_2_tn.jpg" alt="">
 			<img src="assets/Top Destination/Delta Dunarii/Delta_Dunarii_3_tn.jpg" alt="">
 		</section>
-	
+
 		<% $loc = $delta_loc  %>
 		<% if $location.empty? %>
-			<% $loc_hash = @delta %>
+			<% @loc_hash = @delta %>
 			
 		<% else %>
-			<% $loc_hash = $location %>
+			<% @loc_hash = $location %>
 		<% end %>
-		<% clas = "comment_"+$loc.to_s %>
-		<section class=<%= clas %>>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
 			<% if current_user %>
-			<%= link_to "Comment", comments_path, :remote => true %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
 		

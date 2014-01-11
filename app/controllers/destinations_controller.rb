@@ -19,7 +19,7 @@ class DestinationsController < ApplicationController
     @nr = 0
     $location = {}
     @sea = information_com("Marea Neagra", TopDestination)
-    
+    $sea_loc = @tmp
    
     @delta = information_com("Delta Dunarii", TopDestination)
 
@@ -27,6 +27,7 @@ class DestinationsController < ApplicationController
     # @sucevita = 
 
     @parliament = information_com("Casa Poporului", TopDestination)
+    $parliament_loc = @tmp
     # @bran = information_com("Castelul Bran", Castle)
     # @peles = information_com("Castelul Peles", Castle)
 
@@ -57,7 +58,7 @@ class DestinationsController < ApplicationController
 
   def comment
     @comment = Comment.new
-
+    a = params[:clas]
     respond_to do |format|
       format.js 
     

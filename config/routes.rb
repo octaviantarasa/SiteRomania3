@@ -19,8 +19,8 @@ Site::Application.routes.draw do
 # my_route GET    /my_route/:first_param/:second_param/:third_param(.:format)
     match '/destinations/top' => 'destinations#top', :as => 'top', :via => :get
 
-    match '/destinations/comment' => 'destinations#comment', :as => 'comments', :via => :get
-    match '/destinations/comment' => 'destinations#create', :via => :post
+    match '/destinations/comment/:clas/:loc' => 'destinations#comment', :as => 'comments', :via => :get
+    match '/destinations/comment/:clas/:loc' => 'destinations#create', :via => :post
 
     match '/destinations/cities' => 'destinations#cities', :as => 'cities', :via => :get
     match '/destinations/castles' => 'destinations#castles', :as => 'castles', :via => :get

@@ -1,4 +1,4 @@
-<article id="Black_Sea" class="media place_show">
+<article id="Black_Sea" class="media">
 	<h2>Black Sea</h2>
 	<img src="" alt="">
 	<div class="media-body">
@@ -13,6 +13,20 @@
 			<img src="assets/Top Destination/Marea Neagra/Marea_Neagra_4_tn.jpg" alt="">
 		</section>
 
+		<% $loc = $sea_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @sea %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
 
 	</div><!-- media-body -->
 </article>

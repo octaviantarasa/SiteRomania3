@@ -1,3 +1,4 @@
-$('.comment_1').empty()
-	<% $cucu=$location %>		
-$('.comment_1').append("<%= j render 'comment' %>");
+$('.<%= $clas %>').empty()
+
+	<% @loc_hash=$location %>		
+$('.<%= $clas %>').append("<%= j render 'comment' %>");
