@@ -1,0 +1,32 @@
+<article id="Peles_Castle" class="media">
+	<h2>Peles Castle</h2>
+	<img src="" alt="">
+	<div class="media-body">
+		<p>Castelul Peleș din Sinaia, reședința de vară a regilor României, a fost construit la dorința regelui Carol I al României (1866 - 1914), după planurile arhitecților Johannes Schultz, Carol Benesch[1] și Karel Liman, și a fost decorat de celebrii decoratori J. D. Heymann din Hamburg, August Bembé din Mainz și Bernhard Ludwig din Viena.</p>
+		<p>Castelul Peleș este unul dintre cele mai importante edificii de tip istoric din România, având caracter de unicat și este, prin valoarea sa istorică și artistică, unul din cele mai importante monumente de acest fel din Europa celei de a doua jumătăți a secolului al XIX-lea.
+</p>
+		<section class="modalphotos photogrid">
+			<h3>Photos</h3>
+			<img src="assets/Top Destination/Castelul Peles/Castelul_Peles_1_tn.jpg" alt="">
+			<img src="assets/Top Destination/Castelul Peles/Castelul_Peles_2_tn.jpg" alt="">
+			<img src="assets/Top Destination/Castelul Peles/Castelul_Peles_3_tn.jpg" alt="">
+			<img src="assets/Top Destination/Castelul Peles/Castelul_Peles_4_tn.jpg" alt="">
+		</section>
+		<% $loc = $peles_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @peles %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
+
+	</div><!-- media-body -->
+</article>

@@ -1,0 +1,31 @@
+<article id="Sucevita" class="media">
+	<h2>Manastirea Sucevita</h2>
+	<img src="" alt="">
+	<div class="media-body">
+	<p>Mănăstirea Sucevița este o mănăstire din România, situată la 18 km de Rădăuți (județul Suceava), înscrisă pe lista patrimoniului cultural mondial UNESCO.</p>
+	<p> Pictura murală interioară și exterioară este de o mare valoare artistică, fiind o amplă narațiune biblică din Vechiul și Noul Testament.</p>
+		
+		
+		<section class="modalphotos photogrid">
+			<h3>Photos</h3>
+			
+		</section>
+
+			<% $loc = $sucevita_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @sucevita %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
+			</div>
+	</article>
+	

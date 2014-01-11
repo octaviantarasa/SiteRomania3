@@ -1,0 +1,28 @@
+<article id="Voronet" class="media">
+	<h2>Manastirea Voronet</h2>
+	<img src="" alt="">
+	<div class="media-body">
+	<p>Mănăstirea Voroneț, supranumită „Capela Sixtină a Estului”, este un complex monahal medieval construit în satul Voroneț, astăzi cartier al orașului Gura Humorului.</p>
+		<p> Ea constituie una dintre cele mai valoroase ctitorii ale lui Ștefan cel Mare (1457-1504).  De asemenea, lăcașul de cult este inclus în patrimoniul mondial UNESCO.</p>
+		<section class="modalphotos photogrid">
+			<h3>Photos</h3>
+			
+		</section>
+
+					<% $loc = $voronet_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @voronet %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
+			</div>
+	</article>

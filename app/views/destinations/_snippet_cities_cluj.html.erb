@@ -3,7 +3,12 @@
 	<img src="" alt="">
 	<div class="media-body">
 		
-</p>
+	<p>
+		Cluj-Napoca este un municipiu reședință de județ și cel mai mare oraș al județului Cluj. În trecut a fost reședința Comitatului Cluj și una dintre capitalele istorice ale Transilvaniei.
+	</p>
+	<p>
+		Asezat la incrucisarea unor drumuri de interes national si international, municipiul Cluj-Napoca a constituit in permanenta un centru de atractie turistica, atat datorita monumentelor apartinand trecutului istoric, cat si bogatei activitati cultural-stiintifice favorizata de inestimabile valori gazduite in muzee si biblioteci de rezonanta nationala.
+	</p>
 		<section class="modalphotos photogrid">
 			<h3>Photos</h3>
 			<img src="assets/Cities & Towns/Cluj/Cluj_1_tn.jpg" alt="">
@@ -11,7 +16,21 @@
 			<img src="assets/Cities & Towns/Cluj/Cluj_3_tn.jpg" alt="">
 		
 		</section>
-
+		<% $loc = $cluj_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @cluj %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
 
 
 	</div><!-- media-body -->

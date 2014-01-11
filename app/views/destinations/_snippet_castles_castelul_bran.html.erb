@@ -1,0 +1,33 @@
+<article id="Bran_Castle" class="media">
+	<h2>Bran Castle</h2>
+	<img src="" alt="">
+	<div class="media-body">
+		<p>Castelul Bran se situează la mai puțin de 30 km de Brașov, pe șoseaua ce iese prin vechiul cartier Bartolomeu și care leagă Brașovul de Câmpulung. Castelul Bran este construit pe o stâncă, într-un punct cheie din punct de vedere strategic. El adăpostește în acest moment muzeul Bran, muzeu ce se întinde pe cele 4 etaje ale castelului.</p>
+		<p>La muzeu sunt expuse colecții de ceramică, mobilier, arme și armuri, iar în curtea castelului se află un mic muzeu al satului, cu case tradiționale din regiunea culoarului Rucăr-Bran.
+</p>
+		<section class="modalphotos photogrid">
+			<h3>Photos</h3>
+			<img src="assets/Top Destination/Castelul Bran/Castelul_Bran_1_tn.jpg" alt="">
+			<img src="assets/Top Destination/Castelul Bran/Castelul_Bran_2_tn.jpg" alt="">
+			<img src="assets/Top Destination/Castelul Bran/Castelul_Bran_3_tn.jpg" alt="">
+			<img src="assets/Top Destination/Castelul Bran/Castelul_Bran_4_tn.jpg" alt="">
+		</section>
+		<% $loc = $bran_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @bran %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
+
+
+	</div><!-- media-body -->
+</article>

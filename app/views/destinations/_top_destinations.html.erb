@@ -8,14 +8,18 @@
 		<section class="topdestinations">
 			<div id="destinationindex" class="row">
 				<section class="scrollspy clearfix col col-lg-3 hidden-sm">
-					<% @test =222222 %>
+					
 					<ul class="nav nav-list affix">
-						<li><a href="#Painted_Monastery">Painted Monastery</a></li>
+						<li><a href="#Arbore">Manastirea Arbore</a></li>
+						<li><a href="#Moldovita">Manastirea Moldovita</a></li>
+						<li><a href="#Sucevita">Manastirea Sucevita</a></li>
+						<li><a href="#Voronet">Manastirea Voronet</a></li>
 						<li><a href="#Danube_Delta">Danube Delta</a></li>
 						<li><a href="#Black_Sea">Black Sea</a></li>
+						<li><a href="#Palace_of_the_Parliament">Palace of the Parliament</a></li>
 						<li><a href="#Bran_Castle">Bran Castle</a></li>
 						<li><a href="#Peles_Castle">Peles Castle</a></li>
-						<li><a href="#Palace_of_the_Parliament">Palace of the Parliament</a></li>
+					
 					</ul><!-- nav-list -->
 				</section><!-- scrollspy -->
 				<section class="destinationinfo col col-lg-9">
@@ -59,12 +63,15 @@
  	
 					  <div id="map-canvas" style="height:100%"></div>
 
-					<%= render "snippet_destination_monastery"  %>
+					<%= render "snippet_destination_arbore"  %>
+					<%= render "snippet_destination_moldovita"  %>
+					<%= render "snippet_destination_sucevita"  %>
+					<%= render "snippet_destination_voronet"  %>
 					<%= render "snippet_destination_delta"  %>
 					<%= render "snippet_destination_sea"  %>
 					<%= render "snippet_destination_parliament"  %>
-					<%= render "snippet_destination_bran"  %>
-					<%= render "snippet_destination_peles"  %>
+					<%= render "snippet_castles_castelul_bran"  %>
+					<%= render "snippet_castles_castelul_peles"  %>
 
 				</section><!-- destinationinfo -->
 			</div><!-- destinationindex -->

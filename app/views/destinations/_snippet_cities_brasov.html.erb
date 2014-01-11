@@ -2,8 +2,15 @@
 	<h2>Brasov</h2>
 	<img src="" alt="">
 	<div class="media-body">
+
+	<p>
+		Brașov este reședința și cel mai mare municipiu al județului Brașov,
+	</p>
+	<p>
+		Brașovul este cunoscut și datorită Festivalului Internațional „Cerbul de Aur”, ce se ține aproape în fiecare an în centrul orașului. Acesta a avut pe scena sa nume celebre precum Toto Cutugno, Tom Jones, Coolio, Ray Charles, Pink, Kylie Minogue sau Christina Aguilera.
+	</p>
+
 		
-</p>
 		<section class="modalphotos photogrid">
 			<h3>Photos</h3>
 			<img src="assets/Cities & Towns/Brasov/Brasov_1_tn.jpg" alt="">
@@ -15,7 +22,21 @@
 			
 		</section>
 
-
+		<% $loc = $brasov_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @brasov %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
 
 	</div><!-- media-body -->
 </article>

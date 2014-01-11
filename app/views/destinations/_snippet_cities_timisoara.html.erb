@@ -3,7 +3,13 @@
 	<img src="" alt="">
 	<div class="media-body">
 		
-</p>
+	<p>
+		Timișoara este reședința și cel mai mare oraș al județului Timiș din regiunea istorică Banat, vestul României.
+	</p>
+	<p>
+		Timisoara a fost si este in continuare un important centru universitar, economic, comercial, istoric, cultural-stiintific, sportiv si turistic al tarii. Orasul a jucat un rol important in Revolutia contra regimului comunist din 1989, fiind primul oras liber din Romania comunista motiv pentru care la 12 ianuarie 1990 primeste statutul de oras martir.
+	</p>
+
 		<section class="modalphotos photogrid">
 			<h3>Photos</h3>
 			<img src="assets/Cities & Towns/Timisoara/Timisoara_1_tn.jpg" alt="">
@@ -15,7 +21,21 @@
 
 			
 		</section>
-
+	<% $loc = $timisoara_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @timisoara %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
 
 
 	</div><!-- media-body -->

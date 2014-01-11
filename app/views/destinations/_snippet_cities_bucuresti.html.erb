@@ -2,8 +2,12 @@
 	<h2>Bucuresti</h2>
 	<img src="" alt="">
 	<div class="media-body">
-		
-</p>
+		<p>București este capitala României și, în același timp, cel mai populat oraș, centru industrial și comercial al țării.
+		</p>
+		<p>
+			Prima mențiune a localității apare în 1459. În 1862 devine capitala României. De atunci suferă schimbări continue, fiind centrul scenei artistice, culturale și mass-media. Între cele două războaie mondiale, arhitectura elegantă și elita bucureșteană i-au adus porecla „Micul Paris”. 
+		</p>
+
 		<section class="modalphotos photogrid">
 			<h3>Photos</h3>
 			<img src="assets/Cities & Towns/Bucuresti/Bucuresti_1_tn.jpg" alt="">
@@ -18,7 +22,21 @@
 			
 		</section>
 
-
+		<% $loc = $bucuresti_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @bucuresti %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
 
 	</div><!-- media-body -->
 </article>

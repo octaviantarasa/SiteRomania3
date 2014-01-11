@@ -1,0 +1,31 @@
+<article id="Arbore" class="media">
+	<h2>Manastirea Arbore</h2>
+	<img src="" alt="">
+	<div class="media-body">
+			<p>Biserica "Tăierea Capului Sfântului Ioan Botezătorul" din Arbore (cunoscută și ca Biserica Arbore, deși nu este singura biserică din localitate) este o biserică ortodoxă construită în anul 1502 în satul Arbore (județul Suceava) de către hatmanul Luca Arbore.
+			</p>
+		<p> Ea se remarcă prin pictura murală exterioară.</p>
+		
+		
+		<section class="modalphotos photogrid">
+			<h3>Photos</h3>
+			
+		</section>
+				<% $loc = $arbore_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @arbore %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
+		
+		</div>
+	</article>

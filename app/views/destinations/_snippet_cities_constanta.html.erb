@@ -3,7 +3,12 @@
 	<img src="" alt="">
 	<div class="media-body">
 		
-</p>
+	<p>
+		Constanța este un municipiu aflat pe coasta Mării Negre, în partea de sud-est a României, în regiunea istorică Dobrogea, reședință a județului cu același nume și cel mai mare oraș al regiunii de dezvoltare Sud-Est.
+	</p>
+	<p>
+		Constanța este orașul cel mai vechi atestat de pe teritoriul României. Bogăţia, diversitatea şi valoarea urmelor istorice de pe aceste tărâmuri magice atestă originile viitorului popor român, născut din daci şi romani, cu influenţe ale tracilor, bizantinilor, grecilor, armenilor, turcilor şi macedonenilor şi ale popoarelor migratoare atrase de bogăţia acestor ţinuturi.
+	</p>
 		<section class="modalphotos photogrid">
 			<h3>Photos</h3>
 			<img src="assets/Cities & Towns/Constanta/Constanta_1_tn.jpg" alt="">
@@ -12,7 +17,21 @@
 			
 		</section>
 
-
+	<% $loc = $constanta_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @constanta %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
 
 	</div><!-- media-body -->
 </article>

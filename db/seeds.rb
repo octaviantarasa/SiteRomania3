@@ -24,30 +24,29 @@
 		castle.save
 		castle = Castle.new(id: 9,latitude: 45.359913, longitude: 25.542729, title: "Castelul Peles", address: "str. Pelesului, nr. 2, 106100, Sinaia, jud. Prahova", description: "", location_id: 9)
 		castle.save
-		castle = Castle.new(id: 10,latitude: 33 , longitude: 33, title: "Cetatea de Balta", address: "", description: "", location_id: 10)
+		castle = Castle.new(id: 10,latitude: 33 , longitude: 33, title: "Castelul Corvinilor", address: "", description: "", location_id: 10)
 		castle.save
-		castle = Castle.new(id: 11,latitude: 33, longitude: 33, title: "Cetatea Fagaras", address: "", description: "", location_id: 11)
+		castle = Castle.new(id: 11,latitude: 33 , longitude: 33, title: "Cetatea de Balta", address: "", description: "", location_id: 11)
 		castle.save
-		castle = Castle.new(id: 12,latitude: 33, longitude: 33, title: "Cetatea Prejmer", address: "", description: "", location_id: 12)
+		castle = Castle.new(id: 12,latitude: 33, longitude: 33, title: "Cetatea Fagaras", address: "", description: "", location_id: 12)
 		castle.save
-		castle = Castle.new(id: 13,latitude: 33, longitude: 33, title: "Cetatea Rasnov", address: "", description: "", location_id: 13)
+		castle = Castle.new(id: 13,latitude: 33, longitude: 33, title: "Cetatea Prejmer", address: "", description: "", location_id: 13)
 		castle.save
-		castle = Castle.new(id: 14,latitude: 33, longitude: 33, title: "Cetatea Valea Viilor", address: "", description: "", location_id: 14)
-		castle.save
-		castle = Castle.new(id: 15,latitude: 33, longitude: 33, title: "Cetatea Viscri", address: "", description: "", location_id: 15)
+		castle = Castle.new(id: 14,latitude: 33, longitude: 33, title: "Cetatea Rasnov", address: "", description: "", location_id: 14)
 		castle.save
 
-		city = City.new(id: 16,latitude: 33, longitude: 33, title: "Brasov", address: "", description: "", location_id: 16)
+
+		city = City.new(id: 15,latitude: 33, longitude: 33, title: "Brasov", address: "", description: "", location_id: 15)
 		city.save
-		city = City.new(id: 17,latitude: 33, longitude: 33, title: "Bucuresti", address: "", description: "", location_id: 17)
+		city = City.new(id: 16,latitude: 33, longitude: 33, title: "Bucuresti", address: "", description: "", location_id: 16)
 		city.save
-		city = City.new(id: 18,latitude: 33, longitude: 33, title: "Cluj", address: "", description: "", location_id: 18)
+		city = City.new(id: 17,latitude: 33, longitude: 33, title: "Cluj", address: "", description: "", location_id: 17)
 		city.save
-		city = City.new(id: 19,latitude: 33, longitude: 33, title: "Constanta", address: "", description: "", location_id: 19)
+		city = City.new(id: 18,latitude: 33, longitude: 33, title: "Constanta", address: "", description: "", location_id: 18)
 		city.save
-		city = City.new(id: 20,latitude: 33, longitude: 33, title: "Iasi", address: "", description: "", location_id: 20)
+		city = City.new(id: 19,latitude: 33, longitude: 33, title: "Iasi", address: "", description: "", location_id: 19)
 		city.save
-		city = City.new(id: 21,latitude: 33, longitude: 33, title: "Timisoara", address: "", description: "", location_id: 21)
+		city = City.new(id: 20,latitude: 33, longitude: 33, title: "Timisoara", address: "", description: "", location_id: 20)
 		city.save	
 
 		event = Event.new(name: "Craciun", description: "frumos", date: ("2014-12-25").to_date)

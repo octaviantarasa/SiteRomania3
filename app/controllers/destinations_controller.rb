@@ -18,33 +18,69 @@ class DestinationsController < ApplicationController
     @tmp = 0
     @nr = 0
     $location = {}
+  
     @sea = information_com("Marea Neagra", TopDestination)
     $sea_loc = @tmp
    
     @delta = information_com("Delta Dunarii", TopDestination)
-
     $delta_loc = @tmp
     # @sucevita = 
 
     @parliament = information_com("Casa Poporului", TopDestination)
     $parliament_loc = @tmp
-    # @bran = information_com("Castelul Bran", Castle)
-    # @peles = information_com("Castelul Peles", Castle)
 
-    # # @corvinesti = information("", Castle)
+    @sucevita = information_com("Manastirea Sucevita", TopDestination)
+    $sucevita_loc = @tmp
 
-    # @balta = information_com("Cetatea de Balta", Castle)
-    # @fagaras = information_com("Cetatea Fagaras", Castle)
-    # @prejmer = information_com("Cetatea Prejmer", Castle)
-    # @rasnov = information_com("Cetatea Rasnov", Castle)
-    # @viilor = information_com("Cetatea Valea Viilor", Castle)
-    # @viscri = information_com("Cetatea Viscri", Castle)
-    # @brasov = information_com("Brasov", City)
-    # @bucuresti = information_com("Bucuresti", City)
-    # @cluj = information_com("Cluj", City)
-    # @constanta = information_com("Constanta", City)
-    # @iasi = information_com("Iasi", City)
-    # @timisoara = information_com("Timisoara", City)
+    @moldovita = information_com("Manastirea Moldovita", TopDestination)
+    $moldovita_loc = @tmp
+
+    @arbore = information_com("Manastirea Arbore", TopDestination)
+    $arbore_loc = @tmp
+
+    @voronet = information_com("Manastirea Voronet",TopDestination)
+    $voronet_loc = @tmp
+    
+    @bran = information_com("Castelul Bran", Castle)
+    $bran_loc = @tmp
+
+    @peles = information_com("Castelul Peles", Castle)
+    $peles_loc = @tmp
+
+    @corvinilor = information_com("Castelul Corvinilor",Castle)
+    $corvinilor_loc = @tmp
+
+    @balta = information_com("Cetatea de Balta",Castle)
+    $balta_loc = @tmp    
+
+    @fagaras = information_com("Cetatea Fagaras",Castle)
+    $fagaras_loc = @tmp
+
+    @prejmer = information_com("Cetatea Prejmer",Castle)
+    $prejmer_loc = @tmp
+
+    @rasnov = information_com("Cetatea Rasnov",Castle)
+    $rasnov_loc = @tmp
+
+    @brasov = information_com("Brasov", City)
+    $brasov_loc = @tmp
+
+    @bucuresti = information_com("Bucuresti", City)
+    $bucuresti_loc = @tmp
+
+    @cluj = information_com("Cluj", City)
+    $cluj_loc = @tmp
+
+    @constanta = information_com("Constanta", City)
+    $constanta_loc = @tmp
+
+    @iasi = information_com("Iasi", City)
+    $iasi_loc = @tmp
+
+    @timisoara = information_com("Timisoara", City)
+    $timisoara_loc = @tmp
+
+
    
 
 		
