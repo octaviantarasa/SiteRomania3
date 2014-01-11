@@ -12,10 +12,17 @@
 			<img src="assets/Top Destination/Delta Dunarii/Delta_Dunarii_2_tn.jpg" alt="">
 			<img src="assets/Top Destination/Delta Dunarii/Delta_Dunarii_3_tn.jpg" alt="">
 		</section>
-		
+	
 		<% $loc = $delta_loc  %>
-		<% @loc_hash = @location %>
-		<section class="comment">
+		<% if $location.empty? %>
+			<% $loc_hash = @delta %>
+			
+		<% else %>
+			<% $loc_hash = $location %>
+		<% end %>
+		<% clas = "comment_"+$loc.to_s %>
+		<section class=<%= clas %>>
+				
 			<%= render 'comment'  %>
 			<% if current_user %>
 			<%= link_to "Comment", comments_path, :remote => true %>

@@ -1,4 +1,7 @@
-	<% @loc_hash.each_slice(2) do |d| %>
+	<%= $par %>
+	<%= $location  %>
+	<% $loc_hash = $cucu %>
+	<% $loc_hash.each_slice(2) do |d| %>
 					
 		<% if d[0] != "note" %>
 			<div class="name_comm">
@@ -18,4 +21,5 @@
 			Note: <%= d[1]  %>
 		<% end %>
 	<% end %>
+
 			

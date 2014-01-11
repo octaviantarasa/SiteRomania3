@@ -1,7 +1,7 @@
 
 		<h2> Top Destinations</h2>
 		
-		<%=raw @hash.to_json %>
+	
 		
 	
 		<%= yield :scripts  %>
@@ -56,15 +56,7 @@
       window.onload = loadScript;
       // alert("8");
     </script>
-     <% if current_user %>
- 	<h2>hello</h2>
- 	<% else %>
- 		<p>nothing</p>
- <% end %>
- 		
- 		<%= @sea  %>
- 		<br />
- 		<%= @b  %>
+ 	
 					  <div id="map-canvas" style="height:100%"></div>
 
 					<%= render "snippet_destination_monastery"  %>
@@ -80,7 +72,7 @@
 			<section id="modal" class="modal fade" >
 				<div class="modal-body">
 					<img id="modalimage" src="" alt="Modal Photo" >
-					<p> abcddfsafdasbjvadbljerwav ewa efwakl aerwaewl vaeraew!!! </p>
+				
 				</div><!--modal-body-->
 			</section><!--modal fade-->
 

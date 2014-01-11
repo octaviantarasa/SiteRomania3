@@ -17,15 +17,16 @@ class DestinationsController < ApplicationController
 
     @tmp = 0
     @nr = 0
-    # @sea = information_com("Marea Neagra", TopDestination)
+    $location = {}
+    @sea = information_com("Marea Neagra", TopDestination)
     
    
-    @location = information_com("Delta Dunarii", TopDestination)
+    @delta = information_com("Delta Dunarii", TopDestination)
 
     $delta_loc = @tmp
     # @sucevita = 
 
-    # @parliament = information_com("Casa Poporului", TopDestination)
+    @parliament = information_com("Casa Poporului", TopDestination)
     # @bran = information_com("Castelul Bran", Castle)
     # @peles = information_com("Castelul Peles", Castle)
 
@@ -71,22 +72,20 @@ class DestinationsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     verify = @comment.save
-    
+    $par = params.require(:comment).permit(:location_id)
 
-    name = TopDestination.find_by_id(comment_params["location_id"]).title
-
-    @location = information_com name, TopDestination
-
-      case comment_params["location_id"]
-        when !((temp_location = TopDestination.find_by_id(comment_params["location_id"])).nil?)
-            @location = information_com temp_location.title, TopDestination
-        when !((temp_location = Castle.find_by_id(comment_params["location_id"])).nil?)
-            @location = information_com temp_location.title, Castle
-        when !((temp_location = City.find_by_id(comment_params["location_id"])).nil?)
-            @location = information_com temp_location.title, City
-        else
-            puts "adult"
-      end
+    temp_location = TopDestination.find_by_id($par["location_id"])
+     $location = information_com temp_location.title, TopDestination
+      # case par
+      #   when !((temp_location = TopDestination.find_by_id(par)).nil?)
+      #       @location = information_com temp_location.title, TopDestination
+      #   when !((temp_location = Castle.find_by_id(par)).nil?)
+      #       @location = information_com temp_location.title, Castle
+      #   when !((temp_location = City.find_by_id(par)).nil?)
+      #       @location = information_com temp_location.title, City
+      #   else
+      #       puts "adult"
+      # end
 
 
 
