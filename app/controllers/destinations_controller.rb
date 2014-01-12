@@ -4,86 +4,55 @@ class DestinationsController < ApplicationController
 
 	end
 
+  def cities
+     $location = {}
+    @tmp = 0
+    @nr = 0
+
+    all_table
+
+    respond_to do |format|
+      
+      
+      format.js 
+    end
+  end
+
+
+  def castles
+     $location = {}
+    @tmp = 0
+    @nr = 0
+
+    all_table
+
+    respond_to do |format|
+      
+      
+      format.js 
+    end
+  end
 
 
 	def top
-
-    @topdestination = TopDestination.all
-    @hash = Gmaps4rails.build_markers(@topdestination) do |top, marker|
+    $location = {}
+    topdestination = TopDestination.all
+    castle = Castle.find_by_title("Castelul Bran")
+    topdestination << castle
+    castle = Castle.find_by_title("Castelul Peles")
+    topdestination << castle
+    @hash = Gmaps4rails.build_markers(topdestination) do |top, marker|
+      marker.infowindow render_to_string(:partial => "/destinations/infowindow", :locals => { title: top.title, description: top.address})
       marker.lat top.latitude
       marker.lng top.longitude
-      @a = marker.json({ :id => top.id, :link => "topdestination"})
+      marker.title top.title
     end
 
     @tmp = 0
     @nr = 0
-    $location = {}
-  
-    @sea = information_com("Marea Neagra", TopDestination)
-    $sea_loc = @tmp
-   
-    @delta = information_com("Delta Dunarii", TopDestination)
-    $delta_loc = @tmp
-    # @sucevita = 
 
-    @parliament = information_com("Casa Poporului", TopDestination)
-    $parliament_loc = @tmp
+    all_table
 
-    @sucevita = information_com("Manastirea Sucevita", TopDestination)
-    $sucevita_loc = @tmp
-
-    @moldovita = information_com("Manastirea Moldovita", TopDestination)
-    $moldovita_loc = @tmp
-
-    @arbore = information_com("Manastirea Arbore", TopDestination)
-    $arbore_loc = @tmp
-
-    @voronet = information_com("Manastirea Voronet",TopDestination)
-    $voronet_loc = @tmp
-    
-    @bran = information_com("Castelul Bran", Castle)
-    $bran_loc = @tmp
-
-    @peles = information_com("Castelul Peles", Castle)
-    $peles_loc = @tmp
-
-    @corvinilor = information_com("Castelul Corvinilor",Castle)
-    $corvinilor_loc = @tmp
-
-    @balta = information_com("Cetatea de Balta",Castle)
-    $balta_loc = @tmp    
-
-    @fagaras = information_com("Cetatea Fagaras",Castle)
-    $fagaras_loc = @tmp
-
-    @prejmer = information_com("Cetatea Prejmer",Castle)
-    $prejmer_loc = @tmp
-
-    @rasnov = information_com("Cetatea Rasnov",Castle)
-    $rasnov_loc = @tmp
-
-    @brasov = information_com("Brasov", City)
-    $brasov_loc = @tmp
-
-    @bucuresti = information_com("Bucuresti", City)
-    $bucuresti_loc = @tmp
-
-    @cluj = information_com("Cluj", City)
-    $cluj_loc = @tmp
-
-    @constanta = information_com("Constanta", City)
-    $constanta_loc = @tmp
-
-    @iasi = information_com("Iasi", City)
-    $iasi_loc = @tmp
-
-    @timisoara = information_com("Timisoara", City)
-    $timisoara_loc = @tmp
-
-
-   
-
-		
 		respond_to do |format|
       
       format.html
@@ -110,9 +79,22 @@ class DestinationsController < ApplicationController
     @comment = Comment.new(comment_params)
     verify = @comment.save
     $par = params.require(:comment).permit(:location_id)
+   
 
     temp_location = TopDestination.find_by_id($par["location_id"])
-     $location = information_com temp_location.title, TopDestination
+    if !temp_location.nil?
+      $location = information_com temp_location.title, TopDestination
+    end
+
+    temp_location = Castle.find_by_id($par["location_id"])
+    if !temp_location.nil?
+      $location = information_com temp_location.title, Castle
+    end
+
+    temp_location = City.find_by_id($par["location_id"])
+    if !temp_location.nil?
+      $location = information_com temp_location.title, City
+    end
       # case par
       #   when !((temp_location = TopDestination.find_by_id(par)).nil?)
       #       @location = information_com temp_location.title, TopDestination
@@ -136,7 +118,11 @@ class DestinationsController < ApplicationController
    
   end
   
+
   def topdestination
+  
+    
+ 
 
   end
 
@@ -184,7 +170,72 @@ class DestinationsController < ApplicationController
 
     end
 
-     def comment_params
+    def all_table
+       
+    @sea = information_com("Marea Neagra", TopDestination)
+    $sea_loc = @tmp
+   
+    @delta = information_com("Delta Dunarii", TopDestination)
+    $delta_loc = @tmp
+    # @sucevita = 
+
+    @parliament = information_com("Casa Poporului", TopDestination)
+    $parliament_loc = @tmp
+
+    @sucevita = information_com("Manastirea Sucevita", TopDestination)
+    $sucevita_loc = @tmp
+
+    @moldovita = information_com("Manastirea Moldovita", TopDestination)
+    $moldovita_loc = @tmp
+
+    $arbore = information_com("Manastirea Arbore", TopDestination)
+    $arbore_loc = @tmp
+
+    @voronet = information_com("Manastirea Voronet",TopDestination)
+    $voronet_loc = @tmp
+    
+    @bran = information_com("Castelul Bran", Castle)
+    $bran_loc = @tmp
+
+    @peles = information_com("Castelul Peles", Castle)
+    $peles_loc = @tmp
+
+    @corvinilor = information_com("Castelul Corvinilor",Castle)
+    $corvinilor_loc = @tmp
+
+    @balta = information_com("Cetatea de Balta",Castle)
+    $balta_loc = @tmp    
+
+    @fagaras = information_com("Cetatea Fagaras",Castle)
+    $fagaras_loc = @tmp
+
+    @prejmer = information_com("Cetatea Prejmer",Castle)
+    $prejmer_loc = @tmp
+
+    @rasnov = information_com("Cetatea Rasnov",Castle)
+    $rasnov_loc = @tmp
+
+    @brasov = information_com("Brasov", City)
+    $brasov_loc = @tmp
+
+    @bucuresti = information_com("Bucuresti", City)
+    $bucuresti_loc = @tmp
+
+    @cluj = information_com("Cluj", City)
+    $cluj_loc = @tmp
+
+    @constanta = information_com("Constanta", City)
+    $constanta_loc = @tmp
+
+    @iasi = information_com("Iasi", City)
+    $iasi_loc = @tmp
+
+    @timisoara = information_com("Timisoara", City)
+    $timisoara_loc = @tmp
+    end
+
+
+    def comment_params
       params.require(:comment).permit(:com_text, :user_id, :location_id)
     end
 

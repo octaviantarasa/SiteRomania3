@@ -11,9 +11,20 @@
 
 		</section>
 
-		<div style="display:none">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, fugiat, itaque ratione praesentium voluptates ipsam fuga doloribus obcaecati quia rerum facere omnis laudantium delectus tempore officia qui nam enim accusamus.
-
-		</div>
+	<% $loc = $corvinilor_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @corvinilor %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+		<section class=<%= $clas %>>
+				
+			<%= render 'comment'  %>
+			<% if current_user %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<% end %>
+		</section>
 	</div><!-- media-body -->
 </article>

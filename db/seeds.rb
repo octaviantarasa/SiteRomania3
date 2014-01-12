@@ -24,11 +24,12 @@
 		castle.save
 		castle = Castle.new(id: 9,latitude: 45.359913, longitude: 25.542729, title: "Castelul Peles", address: "str. Pelesului, nr. 2, 106100, Sinaia, jud. Prahova", description: "", location_id: 9)
 		castle.save
-		castle = Castle.new(id: 10,latitude: 33 , longitude: 33, title: "Castelul Corvinilor", address: "", description: "", location_id: 10)
+		castle = Castle.new(id: 10,latitude: 45.749358 , longitude: 22.888352, title: "Castelul Corvinilor", address: "Strada Castelului 1-3
+Hunedoara 331141", description: "", location_id: 10)
 		castle.save
-		castle = Castle.new(id: 11,latitude: 33 , longitude: 33, title: "Cetatea de Balta", address: "", description: "", location_id: 11)
+		castle = Castle.new(id: 11,latitude: 46.255552 , longitude: 24.173419, title: "Cetatea de Balta", address: "", description: "", location_id: 11)
 		castle.save
-		castle = Castle.new(id: 12,latitude: 33, longitude: 33, title: "Cetatea Fagaras", address: "", description: "", location_id: 12)
+		castle = Castle.new(id: 12,latitude: 45.845144, longitude: 24.974542, title: "Cetatea Fagaras", address: "", description: "", location_id: 12)
 		castle.save
 		castle = Castle.new(id: 13,latitude: 33, longitude: 33, title: "Cetatea Prejmer", address: "", description: "", location_id: 13)
 		castle.save
