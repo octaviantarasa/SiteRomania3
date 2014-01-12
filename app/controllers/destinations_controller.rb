@@ -10,6 +10,13 @@ class DestinationsController < ApplicationController
     @nr = 0
 
     all_table
+    cities = City.all
+    @hash = Gmaps4rails.build_markers(cities) do |top, marker|
+      marker.infowindow render_to_string(:partial => "/destinations/infowindow", :locals => { title: top.title, description: top.address})
+      marker.lat top.latitude
+      marker.lng top.longitude
+      marker.title top.title
+    end
 
     respond_to do |format|
       
@@ -25,7 +32,13 @@ class DestinationsController < ApplicationController
     @nr = 0
 
     all_table
-
+    castle = Castle.all
+    @hash = Gmaps4rails.build_markers(castle) do |top, marker|
+      marker.infowindow render_to_string(:partial => "/destinations/infowindow", :locals => { title: top.title, description: top.address})
+      marker.lat top.latitude
+      marker.lng top.longitude
+      marker.title top.title
+    end
     respond_to do |format|
       
       
@@ -36,6 +49,7 @@ class DestinationsController < ApplicationController
 
 	def top
     $location = {}
+    $temp = params[:controller]
     topdestination = TopDestination.all
     castle = Castle.find_by_title("Castelul Bran")
     topdestination << castle
