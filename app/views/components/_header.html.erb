@@ -13,17 +13,18 @@
 
 														<ul class = "nav navbar-nav ">
 
-														<li class = "dropdown">
+														<li class = "dropdown" >
 
-																	<a href="<%= root_path %>">Home</a>
+																	<a  href="<%= root_path %>">Home</a>
 
 
 															</li>
 
-															<li class = "dropdown">
+															<li id = "about" class = "dropdown"  >
 
 																	<a href="<%= about_romania_path  %>" class = "dropdown-toggle" >About Romania</a>
-																	<ul class = "dropdown-menu">
+
+																	<ul id="about_drop" class = "dropdown-menu" style="visibility: hidden">
 																		<li><a href= "#">Location</a></li>
 																		<li><a href= "#">History</a></li>
 																		<li><a href= "#">Culture</a></li>
@@ -32,7 +33,7 @@
 
 															</li>
 
-															<li class = "dropdown">
+															<li  class = "dropdown">
 
 																	<a href="<%= what_to_do_path %>" class = "dropdown-toggle" >What to do</a>
 																	<ul class = "dropdown-menu">
@@ -43,14 +44,14 @@
 
 															</li>
 
-															<li class = "dropdown">
+															<li id = "destination" class = "dropdown">
 
 																	<a href="<%= destinations_path %>" class = "dropdown-toggle" >Destinations</a>
-																	<ul class = "dropdown-menu">
-																		<li><%= link_to 'Top Destinations',  top_path, :remote => true %></li>
+																	<ul  id ="destinations_drop" class = "dropdown-menu" style="visibility:hidden">
+																		<li><%= link_to 'Top Destination',  top_path, :remote => true %></li>
 																		<li><%= link_to 'Cities & Towns',  cities_path, :remote => true %></li>
-																		<li>	<%= link_to 'Regions',  regions_path, :remote => true %></li>
-																		<li>	<%= link_to 'Castles & Fortresses',  castles_path, :remote => true%></li>
+																		<li><%= link_to 'Regions',  regions_path, :remote => true %></li>
+																		<li><%= link_to 'Castles & Fortresses',  castles_path, :remote => true%></li>
 																	</ul>
 
 															</li>
@@ -66,10 +67,10 @@
 
 															</li> -->
 
-															<li class = "dropdown">
+															<li id = "interest" class = "dropdown">
 
 																	<a href="<%= special_interest_path %>" class = "dropdown-toggle" >Special Interest</a>
-																	<ul class = "dropdown-menu">
+																	<ul id="interest_drop" class = "dropdown-menu" style="visibility:hidden">
 																		<li><%= link_to 'Tradition & Folklore', traditions_folklore_path, :remote => true %></li>
 																		<li><%= link_to 'Festivals & Events', festivals_events_path, :remote => true %></li>
 																		<li><%= link_to 'Food & Wine', food_wine_path, :remote => true %></li>
@@ -80,10 +81,10 @@
 
 															</li>
 
-															<li class = "dropdown">
+															<li id = "trip" class = "dropdown">
 
 																	<a href="<%= trip_planner_path %>" class = "dropdown-toggle" >Trip Planner</a>
-																	<ul class = "dropdown-menu">
+																	<ul id="trip_drop" class = "dropdown-menu" style="visibility:hidden">
 																		<li><%= link_to 'Getting here and around', getting_here_path, :remote => true %></li>
 																		<li><%= link_to 'Transportation', transportation_path, :remote => true %></li>
 																		<li><%= link_to 'Itinerary Ideas', itinerary_ideas_path, :remote => true %></li>

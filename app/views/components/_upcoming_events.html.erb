@@ -12,53 +12,81 @@
 
 						<!-- Tab panes -->
 						<div class="tab-content">
-							<div class="tab-pane active" id="mon">
-								<ul>
-									<li>Lorem</li>
-									<li>ipsum</li>
-									<li>dolor</li>
-								</ul>
+							<div class="tab-pane active" id="mon" style="height: 150px;overflow-y: scroll;">
+								<% if !@monday.empty? %>
+									<% @monday.each_slice(3) do |name, description, date|%>
+										<ul>
+											<li> <%= name[1] %></li>
+											<li><%= description[1] %></li>
+											<li><%= date[1] %></li>
+										</ul>
+									<% end %>
+								<% end %>
 							</div>
-							<div class="tab-pane" id="tue">
-								<ul>
-									<li>Lorem</li>
-									<li>ipsum</li>
-									<li>dolor</li>
-								</ul>
+							<div class="tab-pane" id="tue" style="height: 150px;overflow-y: scroll;">
+								<% if !@tuesday.empty? %>
+									<% @tuesday.each_slice(3) do |name, description, date|%>
+										<ul>
+											<li> <%= name[1] %></li>
+											<li><%= description[1] %></li>
+											<li><%= date[1] %></li>
+										</ul>
+									<% end %>
+								<% end %>
 							</div>
-							<div class="tab-pane" id="wed">
-								<ul>
-									<li>Lorem</li>
-									<li>ipsum</li>
-									<li>dolor</li>
-								</ul>
+							<div class="tab-pane" id="wed" style="height: 150px;overflow-y: scroll;">
+								<% if !@wednesday.empty? %>
+									<% @wednesday.each_slice(3) do |name, description, date|%>
+										<ul>
+											<li> <%= name[1] %></li>
+											<li><%= description[1] %></li>
+											<li><%= date[1] %></li>
+										</ul>
+									<% end %>
+								<% end %>
 							</div>
-							<div class="tab-pane" id="thu">
-								<ul>
-									<li>Lorem</li>
-									<li>ipsum</li>
-									<li>dolor</li>
-								</ul>
+							<div class="tab-pane" id="thu" style="height: 150px;overflow-y: scroll;">
+								<% if !@thursday.empty? %>
+									<% @thursday.each_slice(3) do |name, description, date|%>
+										<ul>
+											<li> <%= name[1] %></li>
+											<li><%= description[1] %></li>
+											<li><%= date[1] %></li>
+										</ul>
+									<% end %>
+								<% end %>
 							</div>
-							<div class="tab-pane" id="fri">
-								<ul>
-									<li>Lorem</li>
-									<li>ipsum</li>
-									<li>dolor</li>
-								</ul>
+							<div class="tab-pane" id="fri" style="height: 150px;overflow-y: scroll;">
+								<% if !@friday.empty? %>
+									<% @friday.each_slice(3) do |name, description, date|%>
+										<ul>
+											<li> <%= name[1] %></li>
+											<li><%= description[1] %></li>
+											<li><%= date[1].strftime("%d%b%Y") %></li>
+										</ul>
+									<% end %>
+								<% end %>
 							</div>
-							<div class="tab-pane" id="sat">
-								<ul>
-									<li>Lorem</li>
-									<li>ipsum</li>
-									<li>dolor</li>
-								</ul>
+							<div class="tab-pane" id="sat" style="height: 150px;overflow-y: scroll;">
+								<% if !@saturday.empty? %>
+									<% @saturday.each_slice(3) do |name, description, date|%>
+										<ul>
+											<li> <%= name[1] %></li>
+											<li><%= description[1] %></li>
+											<li><%= date[1].strftime("%d%b%Y") %></li>
+										</ul>
+									<% end %>
+								<% end %>
 							</div>
-							<div class="tab-pane" id="sun">
-								<ul>
-									<li>Lorem</li>
-									<li>ipsum</li>
-									<li>dolor</li>
-								</ul>
+							<div class="tab-pane" id="sun" style="height: 150px;overflow-y: scroll;">
+								<% if !@sunday.empty? %>
+									<% @sunday.each_slice(3) do |name, description, date|%>
+										<ul>
+											<li> <%= name[1] %></li>
+											<li><%= description[1] %></li>
+											<li><%= date[1].strftime("%d %b %Y") %></li>
+										</ul>
+									<% end %>
+								<% end %>
 							</div>
 						</div><!--tab-content-->
