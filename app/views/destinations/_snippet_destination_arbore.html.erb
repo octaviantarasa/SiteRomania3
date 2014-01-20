@@ -1,5 +1,5 @@
 <article id="Arbore" class="media">
-	 <script src="path/to/javascripts/bootstrap-rating-input.min.js" type="text/javascript"></script>
+	 <script src="assets/jquery.raty.js" type="text/javascript"></script>
 	<h2>Manastirea Arbore</h2>
 	<img src="" alt="">
 	<div class="media-body">
@@ -11,14 +11,15 @@
 		<section class="modalphotos photogrid">
 			<h3>Photos</h3>
 
-		<input class="rating" data-clearable="remove" id="rate_id" name="rate_param" type="number" />
+	
 		</section>
 				<% $loc = $arbore_loc  %>
 		<% if $location.empty? %>
 			<% @loc_hash = $arbore %>
-			
+			<% $score = @loc_hash.last %>
 		<% else %>
 			<% @loc_hash = $location %>
+			<% $score = @loc_hash.last %>
 		<% end %>
 		<% $clas = "comment_"+$loc.to_s %>
 		<section class=<%= $clas %>>
@@ -28,6 +29,14 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
+		
+		<p>Averate rating</p>
+		<div id="cucu" nota=<%=@loc_hash.last%> ></div>
+		<p>Your rating</p>
+		<div id="user_star"></div>
+		
+	 
+		
 		
 		</div>
 	</article>

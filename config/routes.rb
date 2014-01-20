@@ -4,6 +4,7 @@ Site::Application.routes.draw do
     # get 'about', to: 'layouts#application'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
     get 'auth/:provider/callback', to: 'sessions#create'
     get 'auth/failure', to: redirect('/')
     get 'signout', to: 'sessions#destroy', as: 'signout'
@@ -16,11 +17,14 @@ Site::Application.routes.draw do
     get 'special_interest', to: 'special_interest#special_interest_page'
     get 'trip_planner', to: 'trip_planner#trip_planner_page'
     get 'what_to_do', to: 'what_to_do#what_to_do_page'
+     resources :rate_locations, only: :update
 # my_route GET    /my_route/:first_param/:second_param/:third_param(.:format)
     match '/destinations/top' => 'destinations#top', :as => 'top', :via => :get
 
     match '/destinations/comment/:clas/:loc' => 'destinations#comment', :as => 'comments', :via => :get
     match '/destinations/comment/:clas/:loc' => 'destinations#create', :via => :post
+
+    match '/destinations/rate' => 'destinations#rate', :as => 'rate', :via => :post
 
     match '/destinations/cities' => 'destinations#cities', :as => 'cities', :via => :get
     match '/destinations/castles' => 'destinations#castles', :as => 'castles', :via => :get

@@ -87,3 +87,42 @@ h2 {
 
   margin-left: 240px;
 }
+#event_list{
+   list-style-type: none;
+   margin-left: -30px;
+   border-bottom: 1px dotted #475c98; 
+   margin-top: 10px;
+}
+#event_name{
+  font-size: larger;
+ background-color: antiquewhite;
+ padding-left: 20px;
+border-radius: 10px;
+margin-bottom: 5px;
+}
+#event_description{
+  font-style: italic;
+}
+#event_date{
+  font-size: small;
+}
+#event_home .tab-pane{
+  height: 200px;
+  overflow-y: scroll;
+}
+#photos_home img{
+  width: 140px
+}
+#facts {
+    height: 300px;
+  overflow-y: scroll;
+}
+#facts .row .col-lg-12 #fact_title {
+  margin-bottom: 0px;
+  font-weight: bold;
+font-size: medium;
+margin-left: 20px;
+ background-color: antiquewhite;
+ border-radius: 10px;
+
+}

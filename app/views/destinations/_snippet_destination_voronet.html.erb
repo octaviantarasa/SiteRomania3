@@ -8,21 +8,27 @@
 			<h3>Photos</h3>
 			
 		</section>
+		<p>Averate rating</p>
+		<div id="star"></div>
+		<p>Your rating</p>
+		<div id="user_star"></div>
 
-					<% $loc = $voronet_loc  %>
+		<% $loc = $voronet_loc  %>
 		<% if $location.empty? %>
 			<% @loc_hash = @voronet %>
-			
 		<% else %>
 			<% @loc_hash = $location %>
 		<% end %>
+
 		<% $clas = "comment_"+$loc.to_s %>
 		<section class=<%= $clas %>>
-				
+		
 			<%= render 'comment'  %>
 			<% if current_user %>
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
+			
 		</section>
-			</div>
+
+	</div>
 	</article>
