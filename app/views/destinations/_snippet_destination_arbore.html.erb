@@ -16,10 +16,10 @@
 				<% $loc = $arbore_loc  %>
 		<% if $location.empty? %>
 			<% @loc_hash = $arbore %>
-			<% $score = @loc_hash.last %>
+			
 		<% else %>
 			<% @loc_hash = $location %>
-			<% $score = @loc_hash.last %>
+			
 		<% end %>
 		<% $clas = "comment_"+$loc.to_s %>
 		<section class=<%= $clas %>>
@@ -29,14 +29,7 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-		
-		<p>Averate rating</p>
-		<div id="cucu" nota=<%=@loc_hash.last%> ></div>
-		<p>Your rating</p>
-		<div id="user_star"></div>
-		
-	 
-		
+		<%= render 'rate' %>
 		
 		</div>
 	</article>

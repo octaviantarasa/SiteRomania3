@@ -1,14 +1,42 @@
-	<script type="text/javascript">
-		
-		var c = $('#cucu').attr('nota');
-		
-			$('#cucu').raty({
-		    readOnly: true,
-		    score: c,
-		    path: '/assets'
-		  });
-		</script>	
+	<% @score = @loc_hash.last %>
 
-		
+		<div class="global_star_<%= $loc%>">
+			<input type="hidden" class="loc_rate_note" >
+			<% if @score == 0 %>
+					<% (1..5).each do |i| %>
+						<li class="rating_star"  ></li>
+					<% end %>
+			<% else %>
 
+				<% (1..@score).each do |i|%>
+					<li class="rating_star on"></li>
+				<% end %>
+
+				<% if @score < 5 %>
+						<% (@score+1..5).each  do |i| %>
+						<li class="rating_star" ></li>
+						<% end %>
+				<% end %>
+			<% end %>
+		</div><!-- global_star -->
 		
+</br>
+	<% if current_user %>
+		<% @score_u = RateLocation.where(user_id: current_user.id, location_id: $loc) %>
+		<% if @score_u.empty? %>
+			<% @num = 0 %>
+		<% else %>
+			<% @num = @score_u[0].note %>
+		<% end %>
+		 <div id="user_star">
+				<% (1..5).each do |i| %>
+					<% if i<=@num %>
+						<li class="rating_star_active on " data-location-id="<%= $loc %>" data-stars= "<%= i %>"
+						id="<%= $loc.to_s + '_'+ i.to_s %>"></li>
+					<% else %>
+						<li class="rating_star_active" data-location-id="<%= $loc %>" data-stars= "<%= i %>"
+						id="<%= $loc.to_s + '_'+ i.to_s %>"></li>
+					<% end %>
+				<% end %>
+		</div> <!-- user_star -->
+	<% end %>

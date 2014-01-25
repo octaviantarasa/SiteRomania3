@@ -27,8 +27,6 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-<%= yield :scripts %>
-		<p>Averate rating</p>
-		<div id="cucu" nota=<%=@loc_hash.last%> ></div>
+		<%= render 'rate' %>
 	</div><!-- media-body -->
 </article>

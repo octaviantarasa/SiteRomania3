@@ -85,6 +85,7 @@ class DestinationsController < ApplicationController
 
   end
 
+
   def comment_show(array)
 
   end
@@ -134,11 +135,38 @@ class DestinationsController < ApplicationController
   
 
   def topdestination
-  
-    
- 
 
   end
+
+  def rate_loc
+    location_id = params[:location_id]
+    note = params[:note]
+    r = RateLocation.where(:location_id => location_id, :user_id => current_user)
+    if r.empty? 
+    RateLocation.create(:note => note, :location_id => location_id, :user_id => current_user.id )
+    else
+     r[0].update(:note => note)
+    end
+   render :nothing => true
+  end
+
+  def rate_loc_value
+    location_id = params[:location_id]
+
+    r = RateLocation.where(:location_id => location_id)
+    if !r.empty? 
+      a = 0 
+      n = 0
+      r.each do |h|
+        a += h.note
+        n +=1 
+      end
+      respond_to do |format|
+        format.js {render :json => {"note"=> a/n}}
+      end
+    end
+  end
+
 
     private  
 

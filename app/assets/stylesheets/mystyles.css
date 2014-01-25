@@ -126,3 +126,22 @@ margin-left: 20px;
  border-radius: 10px;
 
 }
+.rating_star {
+  background: url('star-off.png') 0 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float:left;
+
+}
+.rating_star_active {
+  background: url('star-off.png') 0 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float:left;
+
+}
+.on {
+  background: url('star-on.png') 0 0;
+}
