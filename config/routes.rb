@@ -32,11 +32,12 @@ Site::Application.routes.draw do
     match '/destinations' => 'destinations#topdestination', :as => 'topdestination', :via => :get
 
     match '/special_interest/architecture' => 'special_interest#architecture', :as => 'architecture', :via => :get
-    match '/special_interest/count_dracula' => 'special_interest#count_dracula', :as => 'count_dracula', :via => :get
+  
     match '/special_interest/festivals_events' => 'special_interest#festivals_events', :as => 'festivals_events', :via => :get
     match '/special_interest/food_wine' => 'special_interest#food_wine', :as => 'food_wine', :via => :get
-    match '/special_interest/shopping' => 'special_interest#shopping', :as => 'shopping', :via => :get
     match '/special_interest/traditions_folklore' => 'special_interest#traditions_folklore', :as => 'traditions_folklore', :via => :get
+    match '/special_interest/rate_event/:event_id/:note' => 'special_interest#rate_event',  :via => :post
+     match '/special_interest/rate_event/:event_id' => 'special_interest#rate_event_value', :via => :get
 
     match '/trip_planner/accommodations' => 'trip_planner#accommodations', :as => 'accommodations', :via => :get
     match '/trip_planner/entry_requirements' => 'trip_planner#entry_requirements', :as => 'entry_requirements', :via => :get

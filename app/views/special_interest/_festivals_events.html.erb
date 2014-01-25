@@ -1,1 +1,202 @@
 <h2>Festivals & Events</h2>
+
+
+	<% $events.each_slice(2) do |e1,e2| %>
+		
+			<section class="content row right_event">
+
+				<div class="col-lg-5">
+					<img class="events" src="assets/events/<%= e1.id %>.jpg" alt="" >	
+				</div>
+
+				<div class="col-lg-7 event_description">
+					<section class="content row rate_event_">
+						<div class="col-lg-9">
+							<h3 class="title_"><%= e1.name  %></h3>
+						</div>
+						<div class="col-lg-3">
+							<% rate = $rate_e.where(event_id: e1.id) %>
+							<% n = rate.length %>
+							<% s = 0 %>
+							<% note = 0 %>
+								<% rate.each do |r| %>
+									<% s+=r.note %>
+								<% end %>
+
+							<% if s>0 %>
+							<% note = s/n %>
+							
+							<% end %>
+							<section class="global_star_<%= e1.id %> ">
+							<% if note ==0  %>
+								<% (1..5).each do |i| %>
+									<li class="rating_star_event " data-event-id="<%= e1.id %>" data-stars= "<%= i %>" id="s_<%= e1.id.to_s + '_'+ i.to_s %>"></li>
+								<% end %>
+							<% else %>
+								
+									<% (1..note).each do |i| %>
+										<li class="rating_star_event on " data-event-id="<%= e1.id %>" data-stars= "<%= i %>"	id="s_<%= e1.id.to_s + '_'+ i.to_s %>"></li>
+									<% end %>
+								<% if note < 5 %>
+									<% (note+1..5).each do |i| %>
+										<li class="rating_star_event " data-event-id="<%= e1.id %>" data-stars= "<%= i %>" id="s_<%= e1.id.to_s + '_'+ i.to_s %>"></li>
+									<% end %>
+								<% end %>
+							
+								
+							<% end %> <!-- if note == 0 -->
+						</section>
+						</br>
+						<% if current_user %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<% verif = $rate_e.where(event_id: e1.id, user_id: current_user.id) %>
+								<% if verif.empty? %>
+									<% (1..5).each do |i| %>
+										<li class="rating_star_event_active " data-event-id="<%= e1.id %>" data-stars= "<%= i %>" id="<%= e1.id.to_s + '_'+ i.to_s %>"></li>
+									<% end %>
+
+								<% else %>
+									<% note_user = verif[0].note %>
+
+									<% (1..5).each do |i| %>
+										<% if i<= note_user %>
+										<li class="rating_star_event_active on" data-event-id="<%= e1.id %>" data-stars= "<%= i %>" id="<%= e1.id.to_s + '_'+ i.to_s %>"></li>
+										<% else %>
+										<li class="rating_star_event_active" data-event-id="<%= e1.id %>" data-stars= "<%= i %>" id="<%= e1.id.to_s + '_'+ i.to_s %>"></li>
+										<% end %> <!-- i<=note_user -->
+									<% end %>
+
+								<% end %> <!-- verif.empty? -->
+						
+
+
+							<% end %> <!-- current_user -->
+
+						</div> <!-- col-lg-3 -->
+					</section>
+
+					<p>
+						<%= e1.description  %>
+					</p>
+				
+				
+
+				</div>
+			</section>
+
+			<section class="content row left_event">
+			
+
+				<div class="col-lg-7 event_description">
+
+					<section class="content row rate_event_">
+						<div class="col-lg-9">
+							<h3 class="title_"><%= e2.name  %></h3>
+						</div>
+						<div class="col-lg-3">
+							<% rate = $rate_e.where(event_id: e2.id) %>
+							<% note = 0 %>
+							<% n = rate.length %>
+							<% s = 0 %>
+								<% rate.each do |r| %>
+									<% s+=r.note %>
+								<% end %>
+
+							<% if s>0 %>
+							<% note = s/n %>
+							
+							<% end %>
+							<section class="global_star_<%= e2.id %> ">
+							<% if note ==0  %>
+								<% (1..5).each do |i| %>
+									<li class="rating_star_event " data-event-id="<%= e2.id %>" data-stars= "<%= i %>"
+									id="s_<%= e2.id.to_s + '_'+ i.to_s %>"></li>
+								<% end %>
+							<% else %>
+								
+									<% (1..note).each do |i| %>
+										<li class="rating_star_event on " data-event-id="<%= e2.id %>" data-stars= "<%= i %>"	id="s_<%= e2.id.to_s + '_'+ i.to_s %>"></li>
+									<% end %>
+								<% if note < 5 %>
+									<% (note+1..5).each do |i| %>
+										<li class="rating_star_event " data-event-id="<%= e2.id %>" data-stars= "<%= i %>" id="s_<%= e2.id.to_s + '_'+ i.to_s %>"></li>
+									<% end %>
+								<% end %>
+							
+								
+							<% end %> <!-- if note == 0 -->
+						</section>
+							</br>
+							<% if current_user %>
+								<% verif = $rate_e.where(event_id: e2.id, user_id: current_user.id) %>
+								<% if verif.empty? %>
+									<% (1..5).each do |i| %>
+										<li class="rating_star_event_active " data-event-id="<%= e2.id %>" data-stars= "<%= i %>" id="<%= e2.id.to_s + '_'+ i.to_s %>"></li>
+									<% end %>
+
+
+
+
+
+
+
+
+
+
+								<% else %>
+									<% note_user = verif[0].note %>
+
+									<% (1..5).each do |i| %>
+										<% if i<= note_user %>
+										<li class="rating_star_event_active on" data-event-id="<%= e2.id %>" data-stars= "<%= i %>" id="<%= e2.id.to_s + '_'+ i.to_s %>"></li>
+										<% else %>
+										<li class="rating_star_event_active" data-event-id="<%= e2.id %>" data-stars= "<%= i %>" id="<%= e2.id.to_s + '_'+ i.to_s %>"></li>
+										<% end %> <!-- i<=note_user -->
+									<% end %>
+
+								<% end %> <!-- verif.empty? -->
+						
+
+
+							<% end %> <!-- current_user -->
+
+						</div> <!-- col-lg-3 -->
+					</section>					
+			
+					</br>
+					<p>
+						<%= e2.description  %>
+					</p>
+
+
+				</div>
+				<div class="col-lg-5">
+					<img class="events" src="assets/events/<%= e2.id %>.jpg" alt="" >	
+				</div>
+
+			</section>
+
+
+
+	<% end %> <!-- $events -->
+			<script src="assets/myscrypt.js" type="text/javascript"></script>

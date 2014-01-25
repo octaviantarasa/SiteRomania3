@@ -22,13 +22,16 @@
 			
 		<% end %>
 		<% $clas = "comment_"+$loc.to_s %>
-		<section class=<%= $clas %>>
+		<section class=<%= $clas %> >
 				
 			<%= render 'comment'  %>
 			<% if current_user %>
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
+	
 		</section>
+
+		
 		<%= render 'rate' %>
 		
 		</div>

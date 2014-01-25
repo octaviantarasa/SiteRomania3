@@ -140,8 +140,41 @@ margin-left: 20px;
   height: 16px;
   display: block;
   float:left;
+  cursor: pointer;
+}
+
+.rating_star_event {
+  background: url('star-off.png') 0 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float:left;
 
 }
+
+.rating_star_event_active {
+  background: url('star-off.png') 0 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float:left;
+  cursor: pointer;
+}
+
+
 .on {
   background: url('star-on.png') 0 0;
+}
+
+img.traditions{
+  width: 100%;
+}
+img.events{
+   width: 100%;
+}
+.title_ {
+  margin-left: 20px;
+}
+.event_description {
+  margin-top: 20px;
 }
