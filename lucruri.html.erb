@@ -158,3 +158,50 @@ set_stars(form_id, $(‘#’ + form_id + ‘_stars’).val());
             $(".dropdown-menu",this).fadeOut(0)
         })
     ,
+
+
+
+    			<li><%= link_to 'Practical Information', practical_information_path, :remote => true %></li>
+
+																		<li><%= link_to 'Entry Requirements', entry_requirements_path, :remote => true %></li>
+
+
+
+
+																		<div class="content row my_content">
+
+<div class="col-lg-6 img_text left">
+	<div class="fluid">
+				<div class="top">
+					<img src="">
+				</div>
+				<img class="center_img" src="assets/Practical_Information_tn.jpg" alt="Practical information" />
+				<section class="inner">
+					<%= link_to 'Practical Information', practical_information_path, :remote => true, :class => "img_title" %>
+							<p>Romania is a year-round tourist destination. However, from the end of April to the beginning of July and from end of August to the end of October are the most popular sightseeing periods, with generally mild and pleasant temperatures</p>
+				</section>
+				<div class="clear foot">
+					<img src="">
+				</div>
+			</div>
+</div>
+
+<div class="col-lg-6 img_text">
+	<div class="fluid">
+				<div class="top">
+					<img src="">
+				</div>
+				<img class="center_img" src="assets/Pasaport_tn.jpg" alt="Entry Requirements" />
+				<section class="inner">
+					<%= link_to 'Entry Requirements', entry_requirements_path, :remote => true, :class => "img_title" %>
+							<p>This website is intended to assist travelers who are planning to visit Romania or would like
+to learn more about Romania.Black Sea; from Southern Transylvania to Bucovina or Maramures. Take a step back in time
+as you visit one of the world's famous painted monasteries in Bucovina, the ancient, hilltop citadel in Sighisoara or an authentic, centuries-old, folkloric village in Maramures.</p>
+				</section>
+				<div class="clear foot">
+					<img src="">
+				</div>
+			</div>
+</div>
+
+</div>
