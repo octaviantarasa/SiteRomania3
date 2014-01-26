@@ -1,5 +1,24 @@
+	<% $loc = $rasnov_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @rasnov %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
 <article id="Cetatea_Rasnov" class="media">
-	<h2>Cetatea Rasnov</h2>
+	
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Cetatea Rasnov</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 		<p>Cetatea Râșnov este ansamblul fortificat situat pe dealul calcaros aflat la sudul orașului Râșnov din județul Brașov, unul din cele mai bine păstrate ansambluri fortificate din Transilvania.</p>
@@ -16,14 +35,7 @@
 
 
 		</section>
-	<% $loc = $rasnov_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @rasnov %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -31,7 +43,6 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-		<%= render 'rate' %>
-	
+		
 	</div><!-- media-body -->
 </article>

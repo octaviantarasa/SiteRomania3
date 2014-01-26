@@ -1,5 +1,27 @@
+
+		<% $loc = $bucuresti_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @bucuresti %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
+
 <article id="Bucuresti" class="media">
-	<h2>Bucuresti</h2>
+	
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Bucuresti</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 		<p>București este capitala României și, în același timp, cel mai populat oraș, centru industrial și comercial al țării.
@@ -22,14 +44,7 @@
 			
 		</section>
 
-		<% $loc = $bucuresti_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @bucuresti %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -37,6 +52,6 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-		<%= render 'rate' %>
+		
 	</div><!-- media-body -->
 </article>

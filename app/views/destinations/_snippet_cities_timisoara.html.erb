@@ -1,5 +1,25 @@
+	<% $loc = $timisoara_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @timisoara %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
 <article id="Timisoara" class="media">
-	<h2>Timisoara</h2>
+	
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Timisoara</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 		
@@ -21,14 +41,7 @@
 
 			
 		</section>
-	<% $loc = $timisoara_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @timisoara %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -37,6 +50,6 @@
 			<% end %>
 		</section>
 
-		<%= render 'rate' %>
+
 	</div><!-- media-body -->
 </article>

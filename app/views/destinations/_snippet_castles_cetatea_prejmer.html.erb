@@ -1,5 +1,25 @@
+	<% $loc = $prejmer_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @prejmer %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
 <article id="Cetatea_Prejmer" class="media">
-	<h2>Cetatea Prejmer</h2>
+	
+			<section class="content row">
+		<div class="col-lg-10">
+			<h2>Cetatea Prejmer</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 		<p>Aflata in partea de nord-est a judetul Brasov, datand inca din secolul al XV lea, Cetatea Prejmer a fost construita in scopul protejarii unuia din cele mai vechi vestigii din Transilvania.</p>
@@ -17,14 +37,7 @@
 
 
 		</section>
-	<% $loc = $prejmer_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @prejmer %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -32,7 +45,7 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-		<%= render 'rate' %>
+		
 	
 	</div><!-- media-body -->
 </article>

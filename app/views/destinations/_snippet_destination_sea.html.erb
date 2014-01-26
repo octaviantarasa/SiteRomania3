@@ -1,5 +1,26 @@
+		<% $loc = $sea_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @sea %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
+
 <article id="Black_Sea" class="media">
-	<h2>Black Sea</h2>
+	
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Black Sea</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 		<p>Litoralul românesc reprezintă o parte din țărmul occidental al Mării Negre și se întinde de la granița cu Ucraina (Nord, în golful Musura) până la cea cu Bulgaria (Sud, la câteva sute de metri de localitatea Vama Veche). Este cea mai exploatată zonă turistică din România.</p>
@@ -13,14 +34,7 @@
 			<img src="assets/Top Destination/Marea Neagra/Marea_Neagra_4_tn.jpg" alt="">
 		</section>
 
-		<% $loc = $sea_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @sea %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -28,6 +42,6 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-	<%= render 'rate' %>
+
 	</div><!-- media-body -->
 </article>

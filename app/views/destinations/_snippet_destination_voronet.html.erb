@@ -1,5 +1,27 @@
+
+		<% $loc = $voronet_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @voronet %>
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
 <article id="Voronet" class="media">
-	<h2>Manastirea Voronet</h2>
+	
+
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Manastirea Voronet</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 	<p>Mănăstirea Voroneț, supranumită „Capela Sixtină a Estului”, este un complex monahal medieval construit în satul Voroneț, astăzi cartier al orașului Gura Humorului.</p>
@@ -10,14 +32,6 @@
 		</section>
 
 
-		<% $loc = $voronet_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @voronet %>
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-
-		<% $clas = "comment_"+$loc.to_s %>
 		<section class=<%= $clas %>>
 		
 			<%= render 'comment'  %>
@@ -26,6 +40,6 @@
 			<% end %>
 			
 		</section>
-<%= render 'rate' %>
+
 	</div>
 	</article>

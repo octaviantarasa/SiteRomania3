@@ -1,5 +1,25 @@
+			<% $loc = $moldovita_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @moldovita %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
 <article id="Moldovita" class="media">
-	<h2>Manastirea Moldovita</h2>
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Manastirea Moldovita</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
+	
 	<img src="" alt="">
 	<div class="media-body">
 	<p>Mănăstirea Moldovița este una din vechile așezări călugărești, cu un important și glorios trecut istoric, străjuitoare de veacuri la hotarul Moldovei de nord, situată în comuna Vatra Moldoviței la o distanță de circa 15 km de comuna Vama.</p>
@@ -10,14 +30,7 @@
 		
 		</section>
 
-			<% $loc = $moldovita_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @moldovita %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -25,7 +38,7 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-		<%= render 'rate' %>
+		
 		
 	</div>
 	</article>

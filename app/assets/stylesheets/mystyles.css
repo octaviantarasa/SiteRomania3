@@ -166,6 +166,10 @@ margin-left: 20px;
   background: url('star-on.png') 0 0;
 }
 
+.dest {
+  margin-top: 25px;
+
+}
 img.traditions{
   width: 100%;
 }

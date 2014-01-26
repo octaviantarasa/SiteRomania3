@@ -1,5 +1,24 @@
+		<% $loc = $delta_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @delta %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
 <article id="Danube_Delta" class="media">
-	<h2>Danube Delta</h2>
+
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Danube Delta</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
+	
 	<img src="" alt="">
 	<div class="media-body">
 		<p>La capătul unui drum ce depăşeşte 2.860 km colectând apele unui impresionant bazin hidrografic a cărui suprafaţă acoperă mai mult de 80% din suprafaţa Europei, Dunărea, cel de-al doilea fluviu ca mărime al bătrânului continent construieşte la întâlnirea sa cu Marea Neagră, de mai bine de 10 000 de ani, una dintre cele mai frumoase delte din Europa şi chiar din lume, cunoscută şi ca una din marile zone umede ale planetei.</p>
@@ -13,14 +32,7 @@
 			<img src="assets/Top Destination/Delta Dunarii/Delta_Dunarii_3_tn.jpg" alt="">
 		</section>
 
-		<% $loc = $delta_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @delta %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -30,7 +42,7 @@
 		</section>
 		
 				
-	<%= render 'rate' %>
+
 			
 		
 	</div><!-- media-body -->

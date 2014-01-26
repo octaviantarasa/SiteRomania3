@@ -163,4 +163,19 @@ $(function(){
     });
 
 
+   //  $(".event_com").click(function(){
+      
+   //    $(".event_comment").append("<input type='text' id='comment'> <button class='comment_submit'>Comment</button> ");
+   //    $(this).remove();
+   //  });
+   // $(".comment_submit").click(function(){
+   //      alert("click");
+   //      var text = $("#comment").val();
+   //      alert(text);
+   //  });
+ 
+
+
+
+
 	});

@@ -1,6 +1,6 @@
 	<% @score = @loc_hash.last %>
 
-		<div class="global_star_<%= $loc%>">
+		<div class="global_star_<%= $loc%> dest">
 			<input type="hidden" class="loc_rate_note" >
 			<% if @score == 0 %>
 					<% (1..5).each do |i| %>

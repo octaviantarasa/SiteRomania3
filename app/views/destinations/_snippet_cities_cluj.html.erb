@@ -1,5 +1,26 @@
+		<% $loc = $cluj_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @cluj %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
+
 <article id="Cluj" class="media">
-	<h2>Cluj</h2>
+	
+	<section class="content row">
+		<div class="col-lg-10">
+			<h2>Cluj</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 		
@@ -16,14 +37,7 @@
 			<img src="assets/Cities & Towns/Cluj/Cluj_3_tn.jpg" alt="">
 		
 		</section>
-		<% $loc = $cluj_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @cluj %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -31,7 +45,7 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-		<%= render 'rate' %>
+		
 
 	</div><!-- media-body -->
 </article>

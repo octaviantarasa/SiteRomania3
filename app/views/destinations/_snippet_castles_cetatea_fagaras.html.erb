@@ -1,5 +1,26 @@
+	<% $loc = $fagaras_loc  %>
+		<% if $location.empty? %>
+			<% @loc_hash = @fagaras %>
+			
+		<% else %>
+			<% @loc_hash = $location %>
+		<% end %>
+		<% $clas = "comment_"+$loc.to_s %>
+
+
+
+
 <article id="Cetatea_Fagaras" class="media">
-	<h2>Cetatea Fagaras</h2>
+	
+			<section class="content row">
+		<div class="col-lg-10">
+			<h2>Cetatea Fagaras</h2>
+		</div>
+		<div class="col-lg-2">
+			<%= render 'rate' %>
+		</div>
+
+	</section>
 	<img src="" alt="">
 	<div class="media-body">
 		<p>Cetatea Fagarasului este cel mai important monument al Fagarasului, unul dintre cele mai mari din tara si chiar din Europa. Cetatea regală, înzestrată cu cel mai mare domeniu feudal din voievodat a fost construită la sfârşitul secolului al XlV-lea.</p>
@@ -14,14 +35,7 @@
 
 		</section>
 
-	<% $loc = $fagaras_loc  %>
-		<% if $location.empty? %>
-			<% @loc_hash = @fagaras %>
-			
-		<% else %>
-			<% @loc_hash = $location %>
-		<% end %>
-		<% $clas = "comment_"+$loc.to_s %>
+
 		<section class=<%= $clas %>>
 				
 			<%= render 'comment'  %>
@@ -29,6 +43,6 @@
 			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
 			<% end %>
 		</section>
-		<%= render 'rate' %>
+		
 	</div><!-- media-body -->
 </article>

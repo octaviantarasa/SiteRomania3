@@ -39,9 +39,8 @@ Site::Application.routes.draw do
     match '/special_interest/rate_event/:event_id/:note' => 'special_interest#rate_event',  :via => :post
      match '/special_interest/rate_event/:event_id' => 'special_interest#rate_event_value', :via => :get
 
-    match '/trip_planner/accommodations' => 'trip_planner#accommodations', :as => 'accommodations', :via => :get
+    
     match '/trip_planner/entry_requirements' => 'trip_planner#entry_requirements', :as => 'entry_requirements', :via => :get
-    match '/trip_planner/getting_here' => 'trip_planner#getting_here', :as => 'getting_here', :via => :get
     match '/trip_planner/itinerary_ideas' => 'trip_planner#itinerary_ideas', :as => 'itinerary_ideas', :via => :get
     match '/trip_planner/practical_information' => 'trip_planner#practical_information', :as => 'practical_information', :via => :get
     match '/trip_planner/transportation' => 'trip_planner#transportation', :as => 'transportation', :via => :get
