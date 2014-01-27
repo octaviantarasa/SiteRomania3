@@ -1,4 +1,4 @@
-	<% $loc = $constanta_loc  %>
+, 	<% $loc = $constanta_loc  %>
 		<% if $location.empty? %>
 			<% @loc_hash = @constanta %>
 			
@@ -43,7 +43,7 @@
 				
 			<%= render 'comment'  %>
 			<% if current_user %>
-			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true %>
+			<%= link_to "Comment", comments_path(:clas => $clas,:loc => $loc), :remote => true, :class => "btn btn-primary button_text" %>
 			<% end %>
 		</section>
 

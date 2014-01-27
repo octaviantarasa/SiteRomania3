@@ -74,6 +74,9 @@ $(function(){
             $("#trip_drop").css("visibility","visible");
        };
     
+    $('.button_text').click(function(){
+        $(this).remove();
+    }) ;  
     $('.rating_star_active').click(function() {
         var star = $(this);
         var location_id = $(this).attr("data-location-id");

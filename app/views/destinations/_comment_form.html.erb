@@ -1,6 +1,9 @@
 
 
 				<%= form_for @comment,  :remote => true do |f| %>
+					    <% @comment.errors.full_messages.each do |msg| %>
+      					<p><%= msg %></p>
+   						 <% end %>
 				 	<%= f.hidden_field :user_id, :value => current_user.id  %>
 				 	<%= f.hidden_field :location_id, :value => @loc  %>
 				  <div class="field">
@@ -9,6 +12,6 @@
 				  </div>
 				  
 				  <div class="actions">
-				    <%= f.submit %>
+				    <button class="btn btn-primary " name="commit" type="submit" value="Create Comment">Create Comment</button>
 				  </div>
 				<% end %>
