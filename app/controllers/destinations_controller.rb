@@ -186,6 +186,7 @@ class DestinationsController < ApplicationController
        
           @h << name 
           @h << t.com_text 
+          @h << t.created_at
         
        
         

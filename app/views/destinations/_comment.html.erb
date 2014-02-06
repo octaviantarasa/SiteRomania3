@@ -1,18 +1,32 @@
 
-	<% @loc_hash.each_slice(2) do |d| %>
+	<% @loc_hash.each_slice(3) do |d| %>
 					
-		<% if d[0] != "note" %>
-			<div class="name_comm">
-				<p class="name_comm_p">
-					Name: <%= d[0] %>
-				</p>
-			</div>
-			
+		
+			<% if d[0] != "note" %>
 
 			<div class="text_comm">
-				<p class="text_comm_p">
-					Comment: <%= d[1] %>
-				</p>
+				<section class="content row">
+					<div class="col-lg-8">
+						<p class="text_comm_p">
+					 		<%= d[1] %>
+						</p>
+					</div>
+					<div class="col-lg-4">
+
+						<div >
+							<p class="name_comm_p">
+								User: <%= d[0] %>
+							</p>
+						</div>
+						<div >
+							<p class="date_comm_p">
+								<%= d[2].strftime("at %I:%M%p, %m/%d/%Y")  %>
+							</p>
+						</div>
+							
+					</div>
+				</section>
+				
 			</div>
 		
 			

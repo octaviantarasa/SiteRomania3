@@ -51,41 +51,41 @@ Prejmer 507165", description: "", location_id: 13)
 		city = City.new(id: 20,latitude: 45.755973, longitude: 21.228848, title: "Timisoara", address: "", description: "", location_id: 20)
 		city.save	
 
-		event = Event.new(id: 21, name: "Noaptea Alba a Muzeelor", description: "Muzeele bucurestene isi asteapta vizitatorii la expozitii, spectacole de muzica, dans, teatru si film, proiectii si evenimente speciale interactive. ", date: ("2014-05-17").to_date)
+		event = Event.new(id: 21, name: "White Night of Museums", description: "Bucharest museums await visitors to exhibitions , performances of music, dance , theater and film screenings and special events interactive .", date: ("2014-05-17").to_date)
 		event.save
-		event = Event.new(id:22, name: "EUROPAfest 2014 ", description: "Cel mai prestigios concurs international de muzica clasica derulat in Romania se pregateste pentru editia cu nr. 21", date: ("2014-05-17").to_date)
+		event = Event.new(id:22, name: "EUROPAfest 2014 ", description: "The most prestigious international classical music competition conducted in Romania is preparing edition nr. 21", date: ("2014-05-17").to_date)
 		event.save
-		event = Event.new(id:23, name: "Zilele Clujului", description: "Zilele Clujului reprezintă cea mai bună ocazie pentru locuitori şi turişti deopotrivă de a descoperi frumuseţile ascunse ale oraşului, de a-i găsi comorile şi de a-i savura ineditul. ", date: ("2014-05-24").to_date)
+		event = Event.new(id:23, name: "Cluj days", description: "Cluj days represents the best opportunity for residents and tourists alike to discover the hidden beauties of the city , of finding treasures and to enjoy the novelty .", date: ("2014-05-24").to_date)
 		event.save
-		event = Event.new(id:24, name: "Raliului Deltei Dunarii", description: "Raliul Deltei Dunării 2014 se va desfăşura la sfârşitul lunii mai la Tulcea şi este etapa a IV-a din Campionatul Naţional de Raliuri", date: ("2014-05-30").to_date)
+		event = Event.new(id:24, name: "Danube Delta Rally", description: "Danube Delta Rally 2014 will be held in late of May in Tulcea and phase IV of National Rally Championship", date: ("2014-05-30").to_date)
 		event.save
-		event = Event.new(id:25, name: "Festivalului Internațional de Film Transilvania", description: "În cei doisprezece ani de existenţă, TIFF a devenit un brand recunoscut în România nu numai pentru calitatea programelor prezentate, ci şi pentru organizarea excelentă, atmosfera efervescentă şi multitudinea de evenimente.", date: ("2014-05-30").to_date)
+		event = Event.new(id:25, name: "The  International Festival Film Transilvania", description: "In the twelve years of existence , TIFF has become a recognizable brand in Romania not only for the quality of the programs presented, but also for the excellent organization , effervescent atmosphere and multitude of events.", date: ("2014-05-30").to_date)
 		event.save
-		event = Event.new(id:26, name: "Jazz in the park", description: "Jazz in the park revine anul acesta cu și mai multe concerte, voie bună și multe alte activități", date: ("2014-06-13").to_date)
+		event = Event.new(id:26, name: "Jazz in the park", description: "Jazz in the Park returns this year with more concerts, good cheer and many other activities", date: ("2014-06-13").to_date)
 		event.save
-		event = Event.new(id:27, name: "Jocul Satului", description: "Un vechi obicei care a strâns laolaltă fete şi feciori din zonele aparţinând comunei Ocna Şugatag, cu toţii gătiţi de sărbătoare şi puşi pe joc.", date: ("2014-06-24").to_date)
+		event = Event.new(id:27, name: "The Village Game", description: " An old custom that brought together girls and young men from Ocna Sugatag, all ready to celebrate and to play. ", date: ("2014-06-24").to_date)
 		event.save
-		event = Event.new(id:28, name: "Festivalul B'ESTFEST", description: "B’ESTFEST este primul festival international din Romania recunoscut in industria muzicala drept unul dintre cele mai mari evenimente de acest gen din Europa Centrala si de Est.", date: ("2014-07-31").to_date)
+		event = Event.new(id:28, name: "B'ESTFEST Festival", description: "  B'ESTFEST is the first international festival of Romania recognized in the music industry as one of the largest events of its kind in Central and Eastern Europe. ", date: ("2014-07-31").to_date)
 		event.save
-		event = Event.new(id:29, name: "Targul de Fete de pe Muntele Gaina", description: "La acest targ participă fetele de măritat sau fetele mari care vor sa fie pețite de feciori.", date: ("2014-07-20").to_date)
+		event = Event.new(id:29, name: "Fair Girls on the Gaina mountain", description: "At this fair  participate marriageable girls or big girls who want to find their love", date: ("2014-07-20").to_date)
 		event.save
-		event = Event.new(id:30, name: "Festivalul Academia Sighisoara", description: "Academia Sighișoara este un festival international pentru tineri musicieni si artisti din toata lumea. ", date: ("2014-08-01").to_date)
+		event = Event.new(id:30, name: "Academy Festival Sighisoara ", description: "Sighisoara Academy is an international festival for young artists worldwide musicien . ", date: ("2014-08-01").to_date)
 		event.save
-    event = Event.new(id:31, name: "Festivalul ARTmania", description: "Festivalul ARTmania este mai mult decât un festival de muzică, este un eveniment multicultural ce reuşeşte să adune în fiecare an iubitori de artă, muzică, fotografie sau pictură.", date: ("2014-08-04").to_date)
+    event = Event.new(id:31, name: "ARTmania Festival", description: "ARTmania Festival is more than a music festival, is a multicultural event that manage to gather each year lovers of art, music, photography or painting.", date: ("2014-08-04").to_date)
 		event.save
-		event = Event.new(id:32, name: "Hora la Prislop", description: "Hora de la Prislop este un festival interjudeţean, ce promovează tradiţiile, obiceiurile, portul şi cântecul popular.", date: ("2014-08-18").to_date)
+		event = Event.new(id:32, name: "Prislop Reel", description: "Prislop reel is an inter county festival that promotes the traditions, customs, seaport and popular songs. ", date: ("2014-08-18").to_date)
 		event.save
-		event = Event.new(id:33, name: "Festivalul Callatis", description: "Festivalul Callatis este unul dintre cele mai mari festivaluri de muzică și cultură din România.", date: ("2014-08-22").to_date)
+		event = Event.new(id:33, name: "Callatis Festival", description: "Callatis Festival is one of the largest music and cultural festivals in Romania .", date: ("2014-08-22").to_date)
 		event.save
-		event = Event.new(id:34, name: "OktoberFest", description: "Eveniment cu marcă înregistrată, festivalul Oktoberfest a adus la București adevărata tradiție bavareză și a reunit sub acoperișul celui mai mare cort din Romania toți pasionații de bere bună.", date: ("2014-10-03").to_date)
+		event = Event.new(id:34, name: "OktoberFest", description: "Trademark event , Oktoberfest brought to Bucharest the true bavarian tradition and brought together under the roof of the largest tent in Romania all good beer enthusiasts .", date: ("2014-10-03").to_date)
 		event.save
-		event = Event.new(id:35, name: 'Festivalul Internaţional „Rodul Pământului - Zilele Recoltei la Cumpăna“', description: "Cantec, dans si voie buna, produse bio si specialitati culinare romanesti si internationale dintre cele mai variate.", date: ("2014-09-21").to_date)
+		event = Event.new(id:35, name: "International Festival 'Rodul Pământului - Zilele Recoltei la Cumpăna'", description: "Cantus, dance and humor, biolagical products and romanian dishes and international most varied.", date: ("2014-09-21").to_date)
 		event.save
-		event = Event.new(id:36, name: "Festivalul International al Viei si Vinului", description: " Festivalul va pune un accent deosebit pe promovarea vinurilor de renume din judetul Vrancea, dar si pe maiestria mesterilor populari si a traditiilor populare.", date: ("2014-09-25").to_date)
+		event = Event.new(id:36, name: " International Festival of vineyard and wine", description: "The festival will put a particular emphasis on promoting famous wines in Vrancea county, and on the craftsmanship of popular and folk traditions. ", date: ("2014-09-25").to_date)
 		event.save
-		event = Event.new(id:37, name: "Ziua Nationala a Romaniei", description: "Parada militară din Capitală, dedicată Zilei Naţionale a României, începe în prezenţa a mii de români, cu salutul Drapelului de Luptă şi trecerea în revistă a Gărzii de Onoare.", date: ("2014-12-01").to_date)
+		event = Event.new(id:37, name: "National Day of Romania", description: "The military parade from Bucharest dedicate to the National Day of Romania begins in the presence of thousands of romanians with the greeting of the Anty Flag and rewiev of Honor guard. ", date: ("2014-12-01").to_date)
 		event.save
-		event = Event.new(id:38, name: "Craciun, Colinde si Merinde din Satul Romanesc", description: "Colindele sunt cele mai importante obiceiuri care se practica si azi incepand din ajunul Craciunului, si pana in ziua de Anul Nou. ", date: ("2014-12-24").to_date)
+		event = Event.new(id:38, name: "Christmas, Carols and food from Romanian village", description: " The carols are the most important habits which is practised nowadays starting since Christmas Eve until the New Year day.", date: ("2014-12-24").to_date)
 		event.save
 		# event = Event.new(id:39 name: "", description: "", date: ("2014--").to_date)
 		# event.save
@@ -153,22 +153,44 @@ Prejmer 507165", description: "", location_id: 13)
 		# event_loc = EventAddress.new(id: 45, city: , address: , latitude: , longitude: , location_id: )
 		# event_loc.save
 
+		user = User.new(uid: 2, name: "Another")
+
+		rate = RateEvent.new(user_id: 2, event_id: 21, note: 4)
+		rate.save
+		rate = RateEvent.new(user_id: 2, event_id: 22, note: 2)
+		rate.save
+		rate = RateEvent.new(user_id: 2, event_id: 25, note: 1)
+		rate.save
+		rate = RateEvent.new(user_id: 2, event_id: 26, note: 4)
+		rate.save
+		rate = RateEvent.new(user_id: 2, event_id: 27, note: 5)
+		rate.save
+		rate = RateEvent.new(user_id: 2, event_id: 23, note: 2)
+		rate.save
+		rate = RateEvent.new(user_id: 2, event_id: 24, note: 3)
+		rate.save
+
+		rate = RateLocation.new(user_id: 2, location_id: 1, note: 3)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 3, note: 5)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 7, note: 4)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 10, note: 2)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 17, note: 1)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 2, note: 3)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 4, note: 5)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 6, note: 1)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 11, note: 2)
+		rate.save
+		rate = RateLocation.new(user_id: 2, location_id: 15, note: 5)
+		rate.save
 
 
-		rate = RateEvent.new(user_id: 1, event_id: 1, note: 4)
-		rate.save
-		rate = RateEvent.new(user_id: 1, event_id: 2, note: 2)
-		rate.save
-
-		rate = RateLocation.new(user_id: 1, location_id: 1, note: 3)
-		rate.save
-		rate = RateLocation.new(user_id: 1, location_id: 3, note: 5)
-		rate.save
-		rate = RateLocation.new(user_id: 1, location_id: 7, note: 4)
-		rate.save
-		rate = RateLocation.new(user_id: 1, location_id: 10, note: 2)
-		rate.save
-		rate = RateLocation.new(user_id: 1, location_id: 17, note: 5)
-		rate.save
 
 	

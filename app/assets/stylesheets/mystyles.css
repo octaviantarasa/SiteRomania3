@@ -88,6 +88,24 @@ h2 {
 
 
 }
+.name_comm_p{
+  font-size: small;
+}
+.date_comm_p{
+  font-size: small;
+}
+.text_comm{
+  border-bottom: 1px dotted #475c98;
+}
+.button_text{
+  width: 100%;
+}
+#ascunde_harta{
+  width: 100%;
+}
+#arata_harta{
+  width: 100%;
+}
 
 #modalimage{
      display: block;
